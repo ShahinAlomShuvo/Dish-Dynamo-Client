@@ -1,12 +1,20 @@
-import { useState } from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const FoodCart = ({ food }) => {
   const { _id, foodName, foodCategory, foodImageUrl, price, quantity } = food;
-  const [ordersCount, setOrdersCount] = useState(quantity);
 
-  const detailsHandler = (_id) => {
-    setOrdersCount(ordersCount + 1);
-    console.log(ordersCount);
+  const ordersCount = quantity;
+
+  const detailsHandler = () => {
+    /*  axios
+      .patch(`http://localhost:5000/foods/${_id}`, {
+        quantity: ordersCount + 1,
+      })
+      .then((response) => {
+        console.log(response.data);
+      }); */
   };
   return (
     <div>
@@ -34,12 +42,13 @@ const FoodCart = ({ food }) => {
             Orders: {quantity}
           </p>
           <div className='pt-4'>
-            <button
-              onClick={() => detailsHandler(_id)}
+            <Link
+              to={`/foodDetails/${_id}`}
+              onClick={detailsHandler}
               className='btn bg-[#FF7C08] text-white border border-transparent hover:border-[#FF7C08] hover:bg-transparent hover:text-[#FF7C08] capitalize py-2 px-4 rounded-md transition duration-300 ease-in-out btn-block'
             >
               Details
-            </button>
+            </Link>
           </div>
         </div>
       </div>
