@@ -1,20 +1,20 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const FoodCart = ({ food }) => {
-  const { _id, foodName, foodCategory, foodImageUrl, price, quantity } = food;
+  const { _id, foodName, foodCategory, foodImageUrl, price, quantity, orders } =
+    food;
 
   const ordersCount = quantity;
 
   const detailsHandler = () => {
-    /*  axios
+    axios
       .patch(`http://localhost:5000/foods/${_id}`, {
         quantity: ordersCount + 1,
       })
       .then((response) => {
         console.log(response.data);
-      }); */
+      });
   };
   return (
     <div>
@@ -39,7 +39,10 @@ const FoodCart = ({ food }) => {
             {foodCategory}
           </p>
           <p className='block font-sans text-sm antialiased font-normal leading-normal text-gray-700 opacity-75'>
-            Orders: {quantity}
+            Available: {quantity}
+          </p>
+          <p className='block font-sans text-sm antialiased font-normal leading-normal text-gray-700 opacity-75'>
+            Orders: {orders ? orders : 0}
           </p>
           <div className='pt-4'>
             <Link

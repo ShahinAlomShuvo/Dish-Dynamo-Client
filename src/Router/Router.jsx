@@ -3,6 +3,7 @@ import Root from "../Layout/Root";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Home from "../Pages/Home/Home";
 import FoodDetails from "../Components/FoodDetails/FoodDetails";
+import AllFoods from "../Components/AllFoods/AllFoods";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,11 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home></Home>,
         loader: () => fetch("http://localhost:5000/foods"),
+      },
+      {
+        path: "/allFoods",
+        element: <AllFoods></AllFoods>,
+        loader: () => fetch("http://localhost:5000/foodsCount"),
       },
       {
         path: "/foodDetails/:id",

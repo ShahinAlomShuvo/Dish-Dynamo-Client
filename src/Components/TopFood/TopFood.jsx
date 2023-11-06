@@ -18,7 +18,7 @@ const TopFood = ({ foods }) => {
       </div>
       <div className='flex justify-center py-10'>
         <Link
-          to={"/allFood"}
+          to={"/allFoods"}
           className='btn bg-[#FF7C08] text-white border border-transparent hover:border-[#FF7C08] hover:bg-transparent hover:text-[#FF7C08] capitalize py-2 px-4 rounded-md transition duration-300 ease-in-out '
         >
           See All Food
