@@ -8,6 +8,8 @@ import LogIn from "../Pages/LogIn/LogIn";
 import Registration from "../Pages/Registration/Registration";
 import Blog from "../Pages/BlogPage/Blog";
 import BlogPost from "../Pages/BlogPage/BlogPost";
+import AddFood from "../Pages/AddFood/AddFood";
+import MyAddedFood from "../Pages/MyAddedFood/MyAddedFood";
 
 const router = createBrowserRouter([
   {
@@ -49,6 +51,14 @@ const router = createBrowserRouter([
         element: <BlogPost></BlogPost>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/blogs/${params.id}`),
+      },
+      {
+        path: "/addFood",
+        element: <AddFood></AddFood>,
+      },
+      {
+        path: "/myAddedFood",
+        element: <MyAddedFood></MyAddedFood>,
       },
     ],
   },

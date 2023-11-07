@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
+import axios from "axios";
 
 const Registration = () => {
   const { createUSer, googleLogIn, githubLogin, updateUserProfile } = useAuth();
@@ -15,6 +16,8 @@ const Registration = () => {
     const photoUrl = form.get("photoUrl");
     const email = form.get("email");
     const password = form.get("password");
+
+    const user = { name, photoUrl, email };
 
     console.log(name, email, photoUrl, password);
     if (password.length < 6) {
@@ -33,6 +36,10 @@ const Registration = () => {
         updateUserProfile(name, photoUrl);
         toast.success("Registration Successful");
         console.log(res.user);
+
+        axios.post("http://localhost:5000/users", user).then((res) => {
+          console.log(res.data);
+        });
       })
       .catch((err) => {
         console.log(err);
@@ -47,6 +54,15 @@ const Registration = () => {
         navigate("/");
         toast.success("Registration Successful");
         console.log(res.user);
+        const user = {
+          name: res.user.displayName,
+          photoUrl: res.user.photoURL,
+          email: res.user.email,
+        };
+
+        axios.post("http://localhost:5000/users", user).then((res) => {
+          console.log(res.data);
+        });
       })
       .catch((error) => {
         console.log(error);
@@ -61,6 +77,16 @@ const Registration = () => {
         navigate("/");
         toast.success("Registration Successful");
         console.log(res.user);
+
+        const user = {
+          name: res.user.displayName,
+          photoUrl: res.user.photoURL,
+          email: res.user.email,
+        };
+
+        axios.post("http://localhost:5000/users", user).then((res) => {
+          console.log(res.data);
+        });
       })
       .catch((error) => {
         console.log(error);

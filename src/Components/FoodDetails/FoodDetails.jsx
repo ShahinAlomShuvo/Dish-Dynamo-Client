@@ -9,7 +9,7 @@ const FoodDetails = () => {
     price,
     description,
     foodCategory,
-    madeBy,
+    userName,
   } = food;
   console.log(food);
   return (
@@ -43,7 +43,7 @@ const FoodDetails = () => {
               Category: {foodCategory}
             </p>
             <p className='mt-2 text-sm text-gray-600 dark:text-gray-400'>
-              Add by: {madeBy}
+              Add by: {userName}
             </p>
             <p className='mt-2 text-sm text-gray-600 dark:text-gray-400'>
               Price: ${price}

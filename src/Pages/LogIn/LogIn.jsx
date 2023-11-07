@@ -1,6 +1,7 @@
 import toast from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
+import axios from "axios";
 
 const LogIn = () => {
   const { signInUser, googleLogIn, githubLogin } = useAuth();
@@ -32,6 +33,16 @@ const LogIn = () => {
       .then((res) => {
         navigate(location?.state ? location.state : "/");
         toast.success("Registration Successful");
+
+        const user = {
+          name: res.user.displayName,
+          photoUrl: res.user.photoURL,
+          email: res.user.email,
+        };
+
+        axios.post("http://localhost:5000/users", user).then((res) => {
+          console.log(res.data);
+        });
       })
       .catch((err) => {
         console.log(err.message);
