@@ -173,12 +173,12 @@ const Registration = () => {
             </div>
           </div>
 
-          <div className='flex items-center justify-center px-4 py-10 bg-white sm:px-6 lg:px-8 sm:py-16 lg:py-24'>
+          <div className='flex items-center justify-center px-4 py-10 bg-[#0F1F33] lg:bg-white sm:px-6 lg:px-8 sm:py-16 lg:py-24'>
             <div className='xl:w-full xl:max-w-sm 2xl:max-w-md xl:mx-auto'>
-              <h2 className='text-3xl font-bold leading-tight text-black sm:text-4xl'>
+              <h2 className='text-3xl font-bold leading-tight text-white lg:text-black sm:text-4xl'>
                 Sign up to Celebration
               </h2>
-              <p className='mt-2 text-base text-gray-600'>
+              <p className='mt-2 text-base text-white  lg:text-gray-600'>
                 Already have an account?{" "}
                 <Link
                   to={"/logIn"}
@@ -194,7 +194,7 @@ const Registration = () => {
                   <div>
                     <label
                       htmlFor='name'
-                      className='text-base font-medium text-gray-900'
+                      className='text-base font-medium text-white  lg:text-gray-900'
                     >
                       {" "}
                       Fast & Last name{" "}
@@ -223,14 +223,14 @@ const Registration = () => {
                         id='name'
                         required
                         placeholder='Enter your full name'
-                        className='block w-full py-4 pl-10 pr-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600'
+                        className='block w-full py-4 pl-10 pr-4 text-white  lg:text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600'
                       />
                     </div>
                   </div>
                   <div>
                     <label
                       htmlFor='photoUrl'
-                      className='text-base font-medium text-gray-900'
+                      className='text-base font-medium text-white  lg:text-gray-900'
                     >
                       {" "}
                       Photo Url
@@ -257,7 +257,7 @@ const Registration = () => {
                         id='photoUrl'
                         required
                         placeholder='Enter your Photo Url'
-                        className='block w-full py-4 pl-10 pr-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600'
+                        className='block w-full py-4 pl-10 pr-4 text-white  lg:text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600'
                       />
                     </div>
                   </div>
@@ -265,7 +265,7 @@ const Registration = () => {
                   <div>
                     <label
                       htmlFor='email'
-                      className='text-base font-medium text-gray-900'
+                      className='text-base font-medium text-white  lg:text-gray-900'
                     >
                       {" "}
                       Email address{" "}
@@ -302,7 +302,7 @@ const Registration = () => {
                   <div>
                     <label
                       htmlFor='password'
-                      className='text-base font-medium text-gray-900'
+                      className='text-base font-medium text-white  lg:text-gray-900'
                     >
                       {" "}
                       Password{" "}

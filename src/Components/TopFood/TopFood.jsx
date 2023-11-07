@@ -11,7 +11,7 @@ const TopFood = ({ foods }) => {
           "Explore culinary excellence with Our Top Food. Indulge in exquisite dishes curated for your ultimate enjoyment."
         }
       ></SectionHeading>
-      <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-5 container mx-auto'>
+      <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-5 container mx-4 lg:mx-auto '>
         {foods.map((food) => (
           <FoodCart key={food._id} food={food}></FoodCart>
         ))}

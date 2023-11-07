@@ -51,7 +51,7 @@ const AllFoods = () => {
         <FilteringFood setSearchFood={setSearchFood}></FilteringFood>
       </div>
       {/* card  */}
-      <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-5 container mx-auto'>
+      <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-5 container mx-4 lg:mx-auto'>
         {searchFood.length > 0
           ? searchFood.map((food) => (
               <FoodCart key={food._id} food={food}></FoodCart>

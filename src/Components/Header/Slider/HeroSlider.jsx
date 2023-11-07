@@ -30,7 +30,7 @@ const HeroSlider = () => {
                 <h1 className='mb-5 text-3xl md:text-5xl font-bold'>
                   A Symphony of Flavors
                 </h1>
-                <p className='text-gray-400 font-semibold text-lg pb-3'>
+                <p className='text-gray-400 font-semibold text-base w-2/3 mx-auto md:w-auto md:text-lg pb-3'>
                   Discover a culinary journey where every bite is a harmonious
                   blend of taste and pleasure.
                 </p>
@@ -70,7 +70,7 @@ const HeroSlider = () => {
                 <h1 className='mb-5 text-3xl md:text-5xl font-bold'>
                   Bite into Burger Paradise
                 </h1>
-                <p className='text-gray-400 font-semibold text-lg pb-3'>
+                <p className='text-gray-400 font-semibold text-base w-2/3 mx-auto md:w-auto md:text-lg pb-3'>
                   Every bite of our burgers is a journey through savory layers,
                   bringing you closer to burger perfection in every mouthful.
                 </p>
@@ -110,7 +110,7 @@ const HeroSlider = () => {
                 <h1 className='mb-5 text-3xl md:text-5xl font-bold'>
                   Indulge in Flavorful Escapades
                 </h1>
-                <p className='text-gray-400 font-semibold text-lg pb-3'>
+                <p className='text-gray-400 font-semibold text-base w-2/3 mx-auto md:w-auto md:text-lg pb-3'>
                   Surrender to the temptation of our tantalizing creations,
                   where every bite is a celebration.
                 </p>

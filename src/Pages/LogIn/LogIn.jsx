@@ -143,12 +143,12 @@ const LogIn = () => {
             </div>
           </div>
 
-          <div className='flex items-center justify-center px-4 py-10 bg-white sm:px-6 lg:px-8 sm:py-16 lg:py-24'>
+          <div className='flex items-center justify-center px-4 py-10 bg-[#0F1F33] lg:bg-white sm:px-6 lg:px-8 sm:py-16 lg:py-24'>
             <div className='xl:w-full xl:max-w-sm 2xl:max-w-md xl:mx-auto'>
-              <h2 className='text-3xl font-bold leading-tight text-black sm:text-4xl'>
+              <h2 className='text-3xl font-bold leading-tight text-white lg:text-black sm:text-4xl'>
                 Log In
               </h2>
-              <p className='mt-2 text-base text-gray-600'>
+              <p className='mt-2 text-base text-white lg:text-gray-600'>
                 Do not have an account?{" "}
                 <Link
                   to={"/register"}
@@ -164,7 +164,7 @@ const LogIn = () => {
                   <div>
                     <label
                       htmlFor='email'
-                      className='text-base font-medium text-gray-900'
+                      className='text-base font-medium text-white lg:text-gray-900'
                     >
                       {" "}
                       Email address{" "}
@@ -201,7 +201,7 @@ const LogIn = () => {
                   <div>
                     <label
                       htmlFor='password'
-                      className='text-base font-medium text-gray-900'
+                      className='text-base font-medium text-white lg:text-gray-900'
                     >
                       {" "}
                       Password{" "}

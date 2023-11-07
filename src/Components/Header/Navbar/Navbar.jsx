@@ -1,7 +1,8 @@
 import { Link, NavLink } from "react-router-dom";
-import avatar from "../../../assets/Images/avatar.png";
-import useAuth from "../../../Hooks/useAuth";
+import avatar from "../../../assets/Images/avaar.png";
+import logo from "../../../assets/Images/logo.png";
 import toast from "react-hot-toast";
+import useAuth from "../../../Hooks/useAuth";
 
 const Navbar = () => {
   const { user, signOutUser } = useAuth();
@@ -21,13 +22,10 @@ const Navbar = () => {
         <NavLink to={"/"}>Home</NavLink>
       </li>
       <li>
-        <NavLink to={"/about"}>About Us</NavLink>
+        <NavLink to={"/blog"}>Blog</NavLink>
       </li>
       <li>
-        <NavLink to={"/store"}>Store</NavLink>
-      </li>
-      <li>
-        <NavLink to={"/contact"}>Contact</NavLink>
+        <NavLink to={"/allFoods"}>All Foods</NavLink>
       </li>
     </>
   );
@@ -59,47 +57,25 @@ const Navbar = () => {
               {navLinks}
             </ul>
           </div>
-          <Link to={"/"} className=' text-[#45445A] text-2xl font-bold'>
-            Yoga <span className='text-[#CEDB1F]'>Fusion</span>
+          <Link to={"/"} className='flex items-center gap-2'>
+            <img className='w-10 md:w-16 rounded-full' src={logo} alt='' />{" "}
+            <h2 className=' text-[#252142] text-2xl md:text-3xl font-bold'>
+              DishDynamo
+            </h2>
           </Link>
         </div>
         <div className='navbar-center hidden lg:flex'>
           <ul className='menu menu-horizontal px-1'>{navLinks}</ul>
         </div>
         <div className='navbar-end space-x-4'>
-          {/* nav end content for medium and large screen  */}
+          {/* nav end content  */}
           <h3 className='text-lg text-[#45445A] font-semibold hidden md:block'>
             {user && user.displayName}
           </h3>
-          <div className='avatar hidden md:block'>
-            <div className='w-11 rounded-full'>
-              <img
-                src={user && user.photoURL ? user.photoURL : avatar}
-                alt='User Avatar'
-              />
-            </div>
-          </div>
-          <div className='hidden md:block'>
-            {user ? (
-              <button
-                onClick={logOut}
-                className='btn bg-[#C4D114] text-gray-600 border border-transparent hover:border-[#C4D114] hover:bg-transparent capitalize py-2 px-4 rounded-md transition duration-300 ease-in-out '
-              >
-                Log Out
-              </button>
-            ) : (
-              <Link
-                to={"/login"}
-                className='btn bg-[#C4D114] text-gray-600 border border-transparent hover:border-[#C4D114] hover:bg-transparent capitalize py-2 px-4 rounded-md transition duration-300 ease-in-out '
-              >
-                Login
-              </Link>
-            )}
-          </div>
-          {/* nav end for small screen  */}
-          <div className='dropdown dropdown-end md:hidden'>
+
+          <div className={`dropdown dropdown-end ${user ? "block" : "hidden"}`}>
             <div tabIndex={0} className='avatar hover:cursor-pointer'>
-              <div className='w-11 rounded-full'>
+              <div className='w-9 md:w-11 rounded-full'>
                 <img
                   src={user && user.photoURL ? user.photoURL : avatar}
                   alt='User Avatar'
@@ -111,28 +87,32 @@ const Navbar = () => {
               className='dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 '
             >
               <li>
-                <h3 className='text-lg text-[#45445A] font-semibold'>
-                  {user && user.displayName}
-                </h3>
+                <Link to={"/addFood"}>Add Food</Link>
               </li>
               <li>
-                {user ? (
-                  <button
-                    onClick={logOut}
-                    className=' bg-[#C4D114] text-gray-600 border border-transparent hover:border-[#C4D114] hover:bg-transparent capitalize py-2 mt-2 w-full rounded-md transition duration-300 ease-in-out '
-                  >
-                    <span className='ml-12 font-bold'>Log Out</span>
-                  </button>
-                ) : (
-                  <Link
-                    to={"/login"}
-                    className='bg-[#C4D114] text-gray-600 border border-transparent hover:border-[#C4D114] hover:bg-transparent capitalize py-2 mt-2 w-full rounded-md transition duration-300 ease-in-out '
-                  >
-                    <span className='ml-12 font-bold'>Login</span>
-                  </Link>
-                )}
+                <Link to={"/myOrder"}>My Order</Link>
+              </li>
+              <li>
+                <Link to={"/myAddedFood"}>My Added Food</Link>
               </li>
             </ul>
+          </div>
+          <div>
+            {user ? (
+              <button
+                onClick={logOut}
+                className='btn bg-[#C4D114] text-gray-600 border border-transparent hover:border-[#C4D114] hover:bg-transparent capitalize py-2 px-4 rounded-md transition duration-300 ease-in-out '
+              >
+                Log Out
+              </button>
+            ) : (
+              <Link
+                to={"/login"}
+                className='btn bg-[#FF7C08] text-white border border-transparent hover:border-[#FF7C08] hover:bg-transparent hover:text-[#FF7C08] capitalize py-2 px-4 rounded-md transition duration-300 ease-in-out '
+              >
+                Login
+              </Link>
+            )}
           </div>
         </div>
       </nav>
