@@ -10,8 +10,8 @@ const OurService = () => {
           "At DishDynamo, we offer catering, takeout, private dining, cooking classes, and wine pairing. Enhance your dining experience with our diverse services."
         }
       ></SectionHeading>
-      <div className='grid grid-cols-3 gap-5 container mx-auto pb-10'>
-        <div className='bg-gray-600 text-white flex flex-col justify-center items-center space-y-3 h-full'>
+      <div className='grid grid-cols-1 md:grid-cols-3 gap-5 px-4 container lg:mx-auto pb-10'>
+        <div className='bg-gray-600 text-white flex flex-col justify-center items-center space-y-3 py-6'>
           <h2 className='text-2xl font-bold'>FIND US HERE</h2>
           <p>Shaheb Bazar, Rajshahi (BD)</p>
           <p>+8801723-981861</p>
@@ -23,7 +23,7 @@ const OurService = () => {
         <div className='row-span-2'>
           <img className='h-full' src={food} />
         </div>
-        <div className='bg-gray-600 space-y-4  flex flex-col justify-center  text-white'>
+        <div className='bg-gray-600 space-y-2  flex flex-col justify-center  text-white py-6'>
           <h2 className='text-center text-2xl font-bold pb-6'>OPENING TIMES</h2>
           <div className='flex justify-around   '>
             <p>MON</p>
