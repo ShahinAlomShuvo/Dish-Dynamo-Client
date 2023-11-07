@@ -9,11 +9,8 @@ const BLogCart = ({ blog }) => {
   };
 
   return (
-    <div>
-      <div
-        onClick={() => handleBlog(_id)}
-        className='block aspect-w-4 aspect-h-3 '
-      >
+    <div onClick={() => handleBlog(_id)}>
+      <div className='block aspect-w-4 aspect-h-3 '>
         <img className='object-cover  h-52' src={thumbnail} />
       </div>
       <span className='inline-flex px-4 py-2 text-xs font-semibold tracking-widest uppercase rounded-full text-rose-500 bg-rose-100 mt-9'>
