@@ -11,6 +11,7 @@ const FoodDetails = () => {
     foodCategory,
     madeBy,
   } = food;
+  console.log(food);
   return (
     <div
       className='flex justify-center'

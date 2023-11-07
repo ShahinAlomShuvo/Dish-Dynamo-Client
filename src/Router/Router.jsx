@@ -6,6 +6,8 @@ import FoodDetails from "../Components/FoodDetails/FoodDetails";
 import AllFoods from "../Components/AllFoods/AllFoods";
 import LogIn from "../Pages/LogIn/LogIn";
 import Registration from "../Pages/Registration/Registration";
+import Blog from "../Pages/BlogPage/Blog";
+import BlogPost from "../Pages/BlogPage/BlogPost";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +38,17 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Registration></Registration>,
+      },
+      {
+        path: "/blog",
+        element: <Blog></Blog>,
+        loader: () => fetch("http://localhost:5000/blogs"),
+      },
+      {
+        path: "/blogPost/:id",
+        element: <BlogPost></BlogPost>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/blogs/${params.id}`),
       },
     ],
   },
