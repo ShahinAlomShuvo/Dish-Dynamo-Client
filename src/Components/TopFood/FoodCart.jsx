@@ -1,27 +1,14 @@
 import Aos from "aos";
-import axios from "axios";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const FoodCart = ({ food }) => {
-  const { _id, foodName, foodCategory, foodImageUrl, price, quantity, orders } =
-    food;
+  const { _id, foodName, foodCategory, foodImageUrl, price, quantity } = food;
 
   useEffect(() => {
     Aos.init({ duration: 2000 });
   }, []);
 
-  const ordersCount = quantity;
-
-  const detailsHandler = () => {
-    axios
-      .patch(`http://localhost:5000/foods/${_id}`, {
-        quantity: ordersCount + 1,
-      })
-      .then((response) => {
-        console.log(response.data);
-      });
-  };
   return (
     <div>
       <div
@@ -50,13 +37,14 @@ const FoodCart = ({ food }) => {
           <p className='block font-sans text-sm antialiased font-normal leading-normal text-gray-700 opacity-75'>
             Available: {quantity}
           </p>
-          <p className='block font-sans text-sm antialiased font-normal leading-normal text-gray-700 opacity-75'>
-            Orders: {orders ? orders : 0}
-          </p>
+
+          {/* <p className='block font-sans text-sm antialiased font-normal leading-normal text-gray-700 opacity-75'>
+            Orders: {orders}
+          </p> */}
+
           <div className='pt-4'>
             <Link
               to={`/foodDetails/${_id}`}
-              onClick={detailsHandler}
               className='btn bg-[#FF7C08] text-white border border-transparent hover:border-[#FF7C08] hover:bg-transparent hover:text-[#FF7C08] capitalize py-2 px-4 rounded-md transition duration-300 ease-in-out btn-block'
             >
               Details

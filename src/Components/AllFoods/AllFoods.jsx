@@ -3,6 +3,7 @@ import FoodCart from "../TopFood/FoodCart";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import FilteringFood from "./FilteringFood";
+import { Helmet } from "react-helmet";
 
 const AllFoods = () => {
   const { count } = useLoaderData();
@@ -46,6 +47,9 @@ const AllFoods = () => {
 
   return (
     <>
+      <Helmet>
+        <title> DishDynamo | AllFoods </title>
+      </Helmet>
       {/* filtering functionality  */}
       <div>
         <FilteringFood setSearchFood={setSearchFood}></FilteringFood>

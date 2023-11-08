@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
 import axios from "axios";
+import { Helmet } from "react-helmet";
 
 const Registration = () => {
   const { createUSer, googleLogIn, githubLogin, updateUserProfile } = useAuth();
@@ -96,6 +97,9 @@ const Registration = () => {
 
   return (
     <div>
+      <Helmet>
+        <title> DishDynamo | Registration </title>
+      </Helmet>
       <div className='bg-white'>
         <div className='grid grid-cols-1 lg:grid-cols-2'>
           <div className='relative flex items-end px-4 pb-10 pt-60 sm:pb-16 md:justify-center lg:pb-24 bg-gray-50 sm:px-6 lg:px-8'>

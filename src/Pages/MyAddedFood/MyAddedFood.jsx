@@ -3,19 +3,19 @@ import { AuthContext } from "../../Provider/AuthProvider";
 
 import axios from "axios";
 import AddedFoodRow from "./AddedFoodRow";
+import { Helmet } from "react-helmet";
 
 const MyAddedFood = () => {
   const { user } = useContext(AuthContext);
 
   const [usersFood, setUsersFood] = useState([]);
 
-  const url = `http://localhost:5000/usersFood?email=${user?.email}`;
-
   useEffect(() => {
+    const url = `http://localhost:5000/usersfood?email=${user?.email}`;
     axios.get(url, { withCredentials: true }).then((res) => {
       setUsersFood(res.data);
     });
-  }, [url]);
+  }, [user?.email]);
 
   const deleteHandler = (id) => {
     fetch(`http://localhost:5000/usersFood/${id}`, {
@@ -31,6 +31,9 @@ const MyAddedFood = () => {
 
   return (
     <div>
+      <Helmet>
+        <title> DishDynamo | My Added Food </title>
+      </Helmet>
       <div className='overflow-x-auto'>
         <table className='table'>
           {/* head */}

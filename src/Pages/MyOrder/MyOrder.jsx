@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import OrderRow from "./OrderRow";
 import axios from "axios";
+import { Helmet } from "react-helmet";
 
 const MyOrder = () => {
   const { user } = useContext(AuthContext);
@@ -50,6 +51,9 @@ const MyOrder = () => {
 
   return (
     <div>
+      <Helmet>
+        <title> DishDynamo | MyOrder </title>
+      </Helmet>
       <div className='overflow-x-auto'>
         <table className='table'>
           {/* head */}

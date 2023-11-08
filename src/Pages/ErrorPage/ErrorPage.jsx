@@ -1,16 +1,20 @@
 import Lottie from "lottie-react";
 import animation from "../../assets/error.json";
 import { Link, useRouteError } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const ErrorPage = () => {
   const error = useRouteError();
-  console.error(error);
+  // console.error(error);
 
   return (
     <div
       className='flex flex-col justify-center items-center h-screen'
       id='error-page'
     >
+      <Helmet>
+        <title> DishDynamo | Error </title>
+      </Helmet>
       <div className='w-96'>
         <Lottie animationData={animation}></Lottie>
       </div>

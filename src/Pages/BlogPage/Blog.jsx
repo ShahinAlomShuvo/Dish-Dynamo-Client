@@ -1,11 +1,15 @@
 import { useLoaderData } from "react-router-dom";
 import BLogCart from "./BLogCart";
+import { Helmet } from "react-helmet";
 
 const Blog = () => {
   const blogData = useLoaderData();
 
   return (
     <div className='py-10 bg-white sm:py-16 '>
+      <Helmet>
+        <title> DishDynamo | Blog </title>
+      </Helmet>
       <div className='px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl'>
         <div className='max-w-2xl mx-auto text-center'>
           <h2 className='text-3xl font-bold leading-tight text-[#231f40]sm:text-4xl lg:text-5xl'>

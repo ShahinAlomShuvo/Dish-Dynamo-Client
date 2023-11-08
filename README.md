@@ -72,5 +72,3 @@
 ### 16. 404 Page
 
 - A custom 404 page with an engaging image or gif and a "Back to Home" button.
-
-- Learn about the services we offer, including home delivery, flexible return policy, quick support system, and secure payment methods.

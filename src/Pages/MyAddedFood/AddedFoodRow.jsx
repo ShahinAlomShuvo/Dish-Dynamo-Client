@@ -1,5 +1,5 @@
 const AddedFoodRow = ({ food, deleteHandler }) => {
-  const { _id, foodImageUrl, foodName, price, buyerEmail } = food;
+  const { _id, foodImageUrl, foodName, price, userEmail } = food;
   return (
     <tr>
       <th>
@@ -37,7 +37,7 @@ const AddedFoodRow = ({ food, deleteHandler }) => {
           </div>
         </div>
       </td>
-      <td>{buyerEmail}</td>
+      <td>{userEmail}</td>
       <td>$ {price}</td>
       <th>
         <button className='btn btn-warning'>Update</button>
