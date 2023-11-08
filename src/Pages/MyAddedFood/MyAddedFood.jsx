@@ -12,7 +12,7 @@ const MyAddedFood = () => {
   const url = `http://localhost:5000/usersFood?email=${user?.email}`;
 
   useEffect(() => {
-    axios.get(url).then((res) => {
+    axios.get(url, { withCredentials: true }).then((res) => {
       setUsersFood(res.data);
     });
   }, [url]);
