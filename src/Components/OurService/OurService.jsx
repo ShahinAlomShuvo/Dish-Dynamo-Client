@@ -1,7 +1,12 @@
 import menu from "../../assets/Images/menu.jpg";
 import food from "../../assets/Images/eggFood.jpg";
 import SectionHeading from "../../Shared/SectionHeading";
+import { useEffect } from "react";
+import Aos from "aos";
 const OurService = () => {
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
   return (
     <>
       <SectionHeading
@@ -11,19 +16,25 @@ const OurService = () => {
         }
       ></SectionHeading>
       <div className='grid grid-cols-1 md:grid-cols-3 gap-5 px-4 container lg:mx-auto pb-10'>
-        <div className='bg-gray-600 text-white flex flex-col justify-center items-center space-y-3 py-6'>
+        <div
+          data-aos='fade-up'
+          className='bg-gray-600 text-white flex flex-col justify-center items-center space-y-3 py-6'
+        >
           <h2 className='text-2xl font-bold'>FIND US HERE</h2>
           <p>Shaheb Bazar, Rajshahi (BD)</p>
           <p>+8801723-981861</p>
           <p>dishdynamo@gmail.com</p>
         </div>
-        <div className='row-span-2'>
+        <div data-aos='fade-up' className='row-span-2'>
           <img className='h-full' src={menu} />
         </div>
-        <div className='row-span-2'>
+        <div data-aos='fade-up' className='row-span-2'>
           <img className='h-full' src={food} />
         </div>
-        <div className='bg-gray-600 space-y-2  flex flex-col justify-center  text-white py-6'>
+        <div
+          data-aos='fade-up'
+          className='bg-gray-600 space-y-2  flex flex-col justify-center  text-white py-6'
+        >
           <h2 className='text-center text-2xl font-bold pb-6'>OPENING TIMES</h2>
           <div className='flex justify-around   '>
             <p>MON</p>

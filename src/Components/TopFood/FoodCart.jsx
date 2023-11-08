@@ -1,9 +1,15 @@
+import Aos from "aos";
 import axios from "axios";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const FoodCart = ({ food }) => {
   const { _id, foodName, foodCategory, foodImageUrl, price, quantity, orders } =
     food;
+
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
 
   const ordersCount = quantity;
 
@@ -18,7 +24,10 @@ const FoodCart = ({ food }) => {
   };
   return (
     <div>
-      <div className='relative flex flex-col text-gray-700 bg-white shadow-md w-96 rounded-xl bg-clip-border'>
+      <div
+        data-aos='zoom-in'
+        className='relative flex flex-col text-gray-700 bg-white shadow-md w-96 rounded-xl bg-clip-border'
+      >
         <div className='relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white h-96 rounded-xl bg-clip-border'>
           <img
             src={foodImageUrl}

@@ -1,11 +1,17 @@
+import Aos from "aos";
+import { useEffect } from "react";
 import { useLoaderData } from "react-router-dom";
 
 const BlogPost = () => {
   const blogData = useLoaderData();
   const { introduction, thumbnail, topics, title } = blogData;
 
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
+
   return (
-    <div className='py-10 bg-white sm:py-16 lg:py-24'>
+    <div data-aos='fade-up' className='py-10 bg-white sm:py-16 lg:py-24'>
       <div className='max-w-5xl px-4 mx-auto sm:px-6 lg:px-8'>
         <div className='mx-auto text-left md:max-w-lg lg:max-w-2xl md:text-center'>
           <h2 className='text-3xl font-bold leading-tight text-black  lg:leading-tight'>

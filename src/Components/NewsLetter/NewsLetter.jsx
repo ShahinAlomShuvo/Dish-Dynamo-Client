@@ -1,4 +1,10 @@
+import Aos from "aos";
+import { useEffect } from "react";
+
 const NewsLetter = () => {
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
   return (
     <div
       className='relative bg-cover bg-center mb-10'
@@ -7,13 +13,15 @@ const NewsLetter = () => {
       }}
     >
       <div className='grid md:grid-cols-3 gap-5  px-10 text-white bg-black bg-opacity-60 py-16'>
-        <h2 className='text-2xl font-bold'>NEWSLETTER</h2>
-        <p className='md:hidden lg:block font-medium'>
+        <h2 data-aos='fade-right' className='text-2xl font-bold'>
+          NEWSLETTER
+        </h2>
+        <p data-aos='fade-right' className='md:hidden lg:block font-medium'>
           Join our newsletter for the latest on promotions, new dishes, and
           exciting events at DishDynamo.
         </p>
 
-        <div className='md:col-span-2 lg:col-span-1'>
+        <div data-aos='fade-right' className='md:col-span-2 lg:col-span-1'>
           <form className='flex items-center'>
             <div className='relative w-full'>
               <input

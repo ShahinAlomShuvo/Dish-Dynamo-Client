@@ -1,3 +1,5 @@
+import Aos from "aos";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const BLogCart = ({ blog }) => {
@@ -8,8 +10,12 @@ const BLogCart = ({ blog }) => {
     navigate(`/blogPost/${_id}`);
   };
 
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
+
   return (
-    <div onClick={() => handleBlog(_id)}>
+    <div data-aos='zoom-in' onClick={() => handleBlog(_id)}>
       <div className='block aspect-w-4 aspect-h-3 '>
         <img className='object-cover  h-52' src={thumbnail} />
       </div>

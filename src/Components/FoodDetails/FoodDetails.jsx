@@ -1,3 +1,5 @@
+import Aos from "aos";
+import { useEffect } from "react";
 import { useLoaderData } from "react-router-dom";
 
 const FoodDetails = () => {
@@ -11,7 +13,11 @@ const FoodDetails = () => {
     foodCategory,
     userName,
   } = food;
-  console.log(food);
+
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
+
   return (
     <div
       className='flex justify-center'
@@ -21,7 +27,10 @@ const FoodDetails = () => {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className='max-w-2xl overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800'>
+      <div
+        data-aos='zoom-in'
+        className='max-w-2xl overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800'
+      >
         <img className='object-cover w-full h-64' src={foodImageUrl} />
 
         <div className='p-6'>
