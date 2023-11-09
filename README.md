@@ -1,5 +1,5 @@
 <h1 >Project Name: DishDynamo</h1>
-<h2>Project Url: </h2>
+<h2>Project Url:https://dishdynamo-c649f.web.app/ </h2>
 
 <h1 align='center'>My Project features</h1>
 
