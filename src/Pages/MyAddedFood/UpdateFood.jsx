@@ -1,10 +1,11 @@
 import axios from "axios";
 import { Helmet } from "react-helmet";
 import toast from "react-hot-toast";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 
 const UpdateFood = () => {
   const userFood = useLoaderData();
+  const navigate = useNavigate();
 
   const {
     description,
@@ -46,11 +47,15 @@ const UpdateFood = () => {
     e.target.reset();
 
     axios
-      .put(`http://localhost:5000/usersfood/${userFood._id}`, updateFood)
+      .put(
+        `https://dish-dynamo-server.vercel.app/usersfood/${userFood._id}`,
+        updateFood
+      )
       .then((res) => {
         console.log(res.data);
         if (res.data.modifiedCount) {
           toast.success("Product Update Successfully");
+          navigate(-1);
         }
       });
   };

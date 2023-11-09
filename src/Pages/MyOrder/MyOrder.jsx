@@ -10,10 +10,10 @@ const MyOrder = () => {
 
   const [orders, setOrders] = useState([]);
 
-  const url = `http://localhost:5000/orderFoods?email=${user?.email}`;
+  const url = `https://dish-dynamo-server.vercel.app/orderFoods?email=${user?.email}`;
 
   useEffect(() => {
-    axios.get(url).then((res) => {
+    axios.get(url, { withCredentials: true }).then((res) => {
       setOrders(res.data);
     });
   }, [url]);
@@ -29,8 +29,9 @@ const MyOrder = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/orderFoods/${id}`, {
+        fetch(`https://dish-dynamo-server.vercel.app/orderFoods/${id}`, {
           method: "DELETE",
+          credentials: "include",
         })
           .then((res) => res.json())
           .then((data) => {

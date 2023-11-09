@@ -6,9 +6,14 @@ import { Helmet } from "react-helmet";
 const OrderFood = () => {
   const orderingFood = useLoaderData();
 
-  const { _id, foodName, price, quantity, foodImageUrl } = orderingFood;
+  const { _id, foodName, price, quantity, foodImageUrl, userEmail } =
+    orderingFood;
 
   const { user } = useAuth();
+  const buyer = userEmail;
+  const productQuantity = quantity;
+  console.log(productQuantity);
+
   const ordersCount = 0;
 
   const handlePurchaseProduct = (e) => {
@@ -33,8 +38,16 @@ const OrderFood = () => {
       foodImageUrl,
     };
 
+    if (user.email === buyer) {
+      return toast.error("You Can Not Buy Your Food");
+    }
+
+    if (productQuantity < 1) {
+      return toast.error("Out Of Stock");
+    }
+
     axios
-      .post("http://localhost:5000/orderingfoods", purchaseFood)
+      .post("https://dish-dynamo-server.vercel.app/orderingfoods", purchaseFood)
       .then((res) => {
         console.log(res.data);
         if (res.data.insertedId) {
@@ -45,17 +58,17 @@ const OrderFood = () => {
     // count order
 
     axios
-      .put(`http://localhost:5000/foods/${_id}`, {
+      .put(`https://dish-dynamo-server.vercel.app/foods/${_id}`, {
         orders: ordersCount + 1,
       })
       .then((response) => {
-        console.log("hello order", response.data);
+        console.log(response.data);
       });
 
     //   count quantity
 
     axios
-      .patch(`http://localhost:5000/foods/${_id}`, {
+      .patch(`https://dish-dynamo-server.vercel.app/foods/${_id}`, {
         quantity: quantity - 1,
       })
       .then((response) => {
