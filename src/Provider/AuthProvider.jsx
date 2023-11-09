@@ -72,7 +72,6 @@ const AuthProvider = ({ children }) => {
 
       setUser(currentUser);
       setLoader(false);
-      console.log(currentUser);
 
       if (currentUser) {
         axios

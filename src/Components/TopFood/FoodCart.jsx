@@ -3,10 +3,11 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const FoodCart = ({ food }) => {
-  const { _id, foodName, foodCategory, foodImageUrl, price, quantity } = food;
+  const { _id, foodName, foodCategory, foodImageUrl, price, quantity, orders } =
+    food;
 
   useEffect(() => {
-    Aos.init({ duration: 2000 });
+    Aos.init({ duration: 1000 });
   }, []);
 
   return (
@@ -38,9 +39,9 @@ const FoodCart = ({ food }) => {
             Available: {quantity}
           </p>
 
-          {/* <p className='block font-sans text-sm antialiased font-normal leading-normal text-gray-700 opacity-75'>
+          <p className='block font-sans text-sm antialiased font-normal leading-normal text-gray-700 opacity-75'>
             Orders: {orders}
-          </p> */}
+          </p>
 
           <div className='pt-4'>
             <Link

@@ -8,6 +8,7 @@ import { Helmet } from "react-helmet";
 
 const Home = () => {
   const foods = useLoaderData();
+  // console.log(foods);
 
   return (
     <div>

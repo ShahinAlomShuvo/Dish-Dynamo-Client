@@ -1,72 +1,64 @@
 import axios from "axios";
+import { Helmet } from "react-helmet";
 import toast from "react-hot-toast";
 import { useLoaderData } from "react-router-dom";
-import useAuth from "../../Hooks/useAuth";
-import { Helmet } from "react-helmet";
-const OrderFood = () => {
-  const orderingFood = useLoaderData();
 
-  const { _id, foodName, price, quantity, foodImageUrl } = orderingFood;
+const UpdateFood = () => {
+  const userFood = useLoaderData();
 
-  const { user } = useAuth();
-  const ordersCount = 0;
+  const {
+    description,
+    userEmail,
+    userName,
+    foodCategory,
+    foodOrigin,
+    price,
+    quantity,
+    foodName,
+    foodImageUrl,
+  } = userFood;
 
-  const handlePurchaseProduct = (e) => {
+  const handleUpdate = (e) => {
     e.preventDefault();
     const form = new FormData(e.target);
 
+    const foodImageUrl = form.get("image");
     const foodName = form.get("name");
     const quantity = form.get("quantity");
     const price = form.get("price");
-    const buyingDate = form.get("date");
-    const foodImageUrl = form.get("image");
+    const foodOrigin = form.get("foodOrigin");
+    const foodCategory = form.get("category");
     const userName = form.get("userName");
     const userEmail = form.get("userEmail");
+    const description = form.get("description");
 
-    const purchaseFood = {
+    const updateFood = {
+      foodImageUrl,
       foodName,
       quantity,
       price,
-      buyingDate,
+      foodOrigin,
+      foodCategory,
       userName,
       userEmail,
-      foodImageUrl,
+      description,
     };
+    e.target.reset();
 
     axios
-      .post("http://localhost:5000/orderingfoods", purchaseFood)
+      .put(`http://localhost:5000/usersfood/${userFood._id}`, updateFood)
       .then((res) => {
         console.log(res.data);
-        if (res.data.insertedId) {
-          toast.success("Product PurChase Successfully");
+        if (res.data.modifiedCount) {
+          toast.success("Product Update Successfully");
         }
-      });
-
-    // count order
-
-    axios
-      .put(`http://localhost:5000/foods/${_id}`, {
-        orders: ordersCount + 1,
-      })
-      .then((response) => {
-        console.log("hello order", response.data);
-      });
-
-    //   count quantity
-
-    axios
-      .patch(`http://localhost:5000/foods/${_id}`, {
-        quantity: quantity - 1,
-      })
-      .then((response) => {
-        console.log(response.data);
       });
   };
 
   return (
     <>
       <Helmet>
-        <title> DishDynamo | Order </title>
+        <title> DishDynamo | UpdateFood </title>
       </Helmet>
       <div
         style={{
@@ -78,11 +70,30 @@ const OrderFood = () => {
         }}
       >
         <div className='w-full  p-4   border border-gray-200 rounded-lg shadow sm:p-6 md:p-8  '>
-          <form className='space-y-6' onSubmit={handlePurchaseProduct}>
+          <form className='space-y-6' onSubmit={handleUpdate}>
             <h5 className='text-xl text-center font-medium text-white dark:text-white'>
-              Purchase A Food
+              Update Food
             </h5>
             <div className='grid md:grid-cols-2 gap-10 px-16'>
+              {/* food image  */}
+              <div className='col-span-2 md:col-span-1'>
+                <label
+                  htmlFor='image'
+                  className='block mb-2 text-base font-medium text-white dark:text-white'
+                >
+                  Food Image
+                </label>
+                <input
+                  defaultValue={foodImageUrl}
+                  type='text'
+                  name='image'
+                  id='image'
+                  className='bg-gray-50 border border-gray-300 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white'
+                  placeholder='Enter Image Url'
+                  required
+                />
+              </div>
+
               {/* food name  */}
               <div className='col-span-2 md:col-span-1'>
                 <label
@@ -139,19 +150,20 @@ const OrderFood = () => {
                 />
               </div>
 
-              {/* date  */}
+              {/* food Origin  */}
               <div className='col-span-2 md:col-span-1'>
                 <label
-                  htmlFor='date'
+                  htmlFor='origin'
                   className='block mb-2 text-base font-medium text-white dark:text-white'
                 >
-                  Date
+                  Food Origin
                 </label>
                 <input
-                  type='date'
-                  name='date'
-                  id='date'
-                  placeholder='Date'
+                  defaultValue={foodOrigin}
+                  type='text'
+                  name='foodOrigin'
+                  id='origin'
+                  placeholder='Product Origin'
                   className='bg-gray-50 border border-gray-300 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white'
                   required
                 />
@@ -166,8 +178,7 @@ const OrderFood = () => {
                   User Name
                 </label>
                 <input
-                  readOnly
-                  defaultValue={user.displayName}
+                  defaultValue={userName}
                   type='text'
                   name='userName'
                   id='userName'
@@ -175,6 +186,34 @@ const OrderFood = () => {
                   className='bg-gray-50 border border-gray-300 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white'
                   required
                 />
+              </div>
+
+              {/* food Category  */}
+              <div className='col-span-2 md:col-span-1'>
+                <label
+                  htmlFor='category'
+                  className='block mb-2 text-base font-medium text-white dark:text-white '
+                >
+                  Category
+                </label>
+
+                <select
+                  defaultValue={foodCategory}
+                  name='category'
+                  id='category'
+                  className='bg-gray-50 border border-gray-300 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white'
+                  required
+                >
+                  <option>Select a Category</option>
+                  <option value='dessert'>Dessert</option>
+                  <option value='chicken'>Chicken</option>
+                  <option value='vegetarian'>Vegetarian</option>
+                  <option value='miscellaneous'>Miscellaneous</option>
+                  <option value='breakfast'>Breakfast</option>
+                  <option value='seafood'>Seafood</option>
+                  <option value='beef'>Beef</option>
+                  <option value='pasta'>Pasta</option>
+                </select>
               </div>
 
               {/* user (email)  */}
@@ -186,8 +225,7 @@ const OrderFood = () => {
                   User Email
                 </label>
                 <input
-                  readOnly
-                  defaultValue={user.email}
+                  defaultValue={userEmail}
                   type='email'
                   name='userEmail'
                   id='userEmail'
@@ -197,30 +235,29 @@ const OrderFood = () => {
                 />
               </div>
 
-              {/* food image  */}
-              <div className='col-span-2 '>
+              {/* Short Description */}
+              <div className='col-span-2'>
                 <label
-                  htmlFor='image'
+                  htmlFor='description'
                   className='block mb-2 text-base font-medium text-white dark:text-white'
                 >
-                  Food image Url
+                  Description about Food :
                 </label>
-                <input
-                  defaultValue={foodImageUrl}
-                  type='text'
-                  name='image'
-                  id='image'
-                  placeholder=' Image url'
+                <textarea
+                  defaultValue={description}
+                  name='description'
+                  id='description'
+                  placeholder='Describe the product...'
+                  rows='4'
                   className='bg-gray-50 border border-gray-300 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white'
                   required
                 />
               </div>
-
               <button
                 type='submit'
                 className='w-full col-span-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'
               >
-                Purchase Food
+                Update Food
               </button>
             </div>
           </form>
@@ -230,4 +267,4 @@ const OrderFood = () => {
   );
 };
 
-export default OrderFood;
+export default UpdateFood;

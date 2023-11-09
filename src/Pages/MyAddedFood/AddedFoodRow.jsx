@@ -1,28 +1,19 @@
-const AddedFoodRow = ({ food, deleteHandler }) => {
-  const { _id, foodImageUrl, foodName, price, userEmail } = food;
+import Aos from "aos";
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
+
+const AddedFoodRow = ({ food }) => {
+  const { _id, foodImageUrl, foodName, price, quantity } = food;
+  console.log(food);
+
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
   return (
-    <tr>
+    <tr data-aos='fade-up'>
       <th>
         <label>
-          <button
-            onClick={() => deleteHandler(_id)}
-            className='btn btn-circle btn-outline btn-sm'
-          >
-            <svg
-              xmlns='http://www.w3.org/2000/svg'
-              className='h-6 w-6'
-              fill='none'
-              viewBox='0 0 24 24'
-              stroke='currentColor'
-            >
-              <path
-                strokeLinecap='round'
-                strokeLinejoin='round'
-                strokeWidth='2'
-                d='M6 18L18 6M6 6l12 12'
-              />
-            </svg>
-          </button>
+          <input type='checkbox' className='checkbox' />
         </label>
       </th>
       <td>
@@ -37,10 +28,12 @@ const AddedFoodRow = ({ food, deleteHandler }) => {
           </div>
         </div>
       </td>
-      <td>{userEmail}</td>
+      <td>{quantity}</td>
       <td>$ {price}</td>
       <th>
-        <button className='btn btn-warning'>Update</button>
+        <Link to={`/foodUpdate/${_id}`} className='btn btn-warning'>
+          Update
+        </Link>
       </th>
     </tr>
   );
