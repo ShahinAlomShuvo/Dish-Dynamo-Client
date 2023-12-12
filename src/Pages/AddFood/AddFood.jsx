@@ -49,7 +49,7 @@ const AddFood = () => {
       <div
         style={{
           backgroundImage:
-            "url(https://i.ibb.co/vm1wJKd/2023-08-25-Sushi-Note-Omakase-045-0.jpg)",
+            "url(https://i.ibb.co/5Y6syyn/burger-fast-food-cheese-food-powerpoint-background-99cc6bd0c0-960-540.jpg)",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           backgroundSize: "cover",
