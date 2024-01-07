@@ -6,8 +6,14 @@ import { Helmet } from "react-helmet";
 const OrderFood = () => {
   const orderingFood = useLoaderData();
 
-  const { _id, foodName, price, quantity, foodImageUrl, userEmail } =
-    orderingFood;
+  const {
+    _id,
+    foodName,
+    price,
+    quantity,
+    foodImageUrl,
+    userEmail,
+  } = orderingFood;
 
   const { user } = useAuth();
   const buyer = userEmail;

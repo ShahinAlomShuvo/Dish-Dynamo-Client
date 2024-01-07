@@ -12,7 +12,7 @@ const TopFood = ({ foods }) => {
         }
       ></SectionHeading>
 
-      <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-5 container mx-4 lg:mx-auto '>
+      <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-10 container mx-4 lg:mx-auto'>
         {foods.map((food) => (
           <FoodCart key={food._id} food={food}></FoodCart>
         ))}

@@ -5,11 +5,9 @@ import Counter from "../../Components/Counter/Counter";
 import OurService from "../../Components/OurService/OurService";
 import NewsLetter from "../../Components/NewsLetter/NewsLetter";
 import { Helmet } from "react-helmet";
-import Translate from "../../Components/Translate/Translate";
 
 const Home = () => {
   const foods = useLoaderData();
-  // console.log(foods);
 
   return (
     <div>
@@ -21,7 +19,6 @@ const Home = () => {
       <Counter></Counter>
       <OurService></OurService>
       <NewsLetter></NewsLetter>
-      {/* <Translate></Translate> */}
     </div>
   );
 };

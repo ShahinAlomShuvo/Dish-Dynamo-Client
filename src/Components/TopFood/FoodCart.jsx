@@ -3,8 +3,15 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const FoodCart = ({ food }) => {
-  const { _id, foodName, foodCategory, foodImageUrl, price, quantity, orders } =
-    food;
+  const {
+    _id,
+    foodName,
+    foodCategory,
+    foodImageUrl,
+    price,
+    quantity,
+    orders,
+  } = food;
 
   useEffect(() => {
     Aos.init({ duration: 1000 });
