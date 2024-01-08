@@ -7,6 +7,7 @@ import NewsLetter from "../../Components/NewsLetter/NewsLetter";
 import { Helmet } from "react-helmet";
 import Banner from "../../Components/Header/Banner/Banner";
 import ComboOffer from "../../Components/ComboOffer/ComboOffer";
+import AboutSection from "../../Components/AboutSection/AboutSection";
 
 const Home = () => {
   const foods = useLoaderData();
@@ -19,6 +20,7 @@ const Home = () => {
       {/* <HeroSlider></HeroSlider> */}
       <Banner></Banner>
       <ComboOffer></ComboOffer>
+      <AboutSection></AboutSection>
       <TopFood foods={foods}></TopFood>
       <Counter></Counter>
       <OurService></OurService>
