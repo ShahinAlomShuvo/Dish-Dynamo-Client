@@ -24,7 +24,7 @@ const FoodCard = ({ food }) => {
         // data-aos='zoom-in'
         className='border-2 border-base-300 rounded-2xl p-6 hover:shadow-lg hover:border-transparent bg-white transition '
       >
-        <div className='grid md:grid-cols-3  items-center gap-6'>
+        <div className='grid lg:grid-cols-3  items-center gap-6'>
           <img
             src={foodImageUrl}
             className='rounded-full w-28 h-28 ring-4 ring-[#E6C9A2]'

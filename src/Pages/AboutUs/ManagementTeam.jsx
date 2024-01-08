@@ -5,7 +5,7 @@ import specialist from "../../assets/Images/specialist.jpg";
 
 const ManagementTeam = () => {
   return (
-    <div className='container mx-auto grid grid-cols-4 gap-6'>
+    <div className='container mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-6 px-4 xl:px-0'>
       {/* owner  */}
       <div className='card  bg-base-100 '>
         <figure>

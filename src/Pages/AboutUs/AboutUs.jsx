@@ -11,9 +11,9 @@ const AboutUs = () => {
         <title> DishDynamo | About Us </title>
       </Helmet>
       <CommonBanner bgImage={aboutUs} title={"About Us"}></CommonBanner>
-      <div className='container mx-auto grid grid-cols-3 gap-8 items-center py-20'>
+      <div className='container mx-auto grid md:grid-cols-3 gap-8 items-center py-20 px-4 xl-px-0'>
         <div>
-          <h2 className='text-right text-4xl leading-10'>
+          <h2 className='text-right text-3xl lg:text-4xl leading-10'>
             Hi! Our Restaurant has been present for over 20 years in the market.
             We make the most of all our customers.
           </h2>

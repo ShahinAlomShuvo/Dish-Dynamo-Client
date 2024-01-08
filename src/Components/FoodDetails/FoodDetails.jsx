@@ -80,18 +80,18 @@ const FoodDetails = () => {
         </div>
       </div> */}
       <div className='bg-[#FEF7EA]'>
-        <div className='grid grid-cols-2 gap-10 container mx-auto py-20 items-center'>
+        <div className='grid lg:grid-cols-2 gap-10 container mx-auto py-20 items-center px-4'>
           <img
             data-aos='zoom-in'
             className='rounded-3xl'
             src={foodImageUrl}
             alt=''
           />
-          <div className='space-y-4'>
+          <div className='space-y-2 xl:space-y-4'>
             <p className='bg-gradient-to-r from-purple-700 to-purple-400 rounded-xl px-3 py-1 w-16 text-center'>
               Sale!
             </p>
-            <h2 className='text-3xl text-[#0c0c0c] font-semibold'>
+            <h2 className='text-2xl xl:text-3xl text-[#0c0c0c] font-semibold'>
               {foodName}
             </h2>
             <p className='text-[#dc0505] text-xl'>Price: ${price}</p>
@@ -106,7 +106,7 @@ const FoodDetails = () => {
             <p className='text-2xl text-[#0c0c0c] font-semibold'>
               Additional Info:
             </p>
-            <div className='flex flex-wrap justify-between'>
+            <div className='flex flex-wrap justify-between gap-4'>
               <p className='text-[#dc0505]'>
                 {" "}
                 <span className='text-[#0c0c0c] mr-2'>Food Category :</span>

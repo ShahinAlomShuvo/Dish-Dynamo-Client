@@ -54,11 +54,11 @@ const AllFoods = () => {
       </Helmet>
       <CommonBanner bgImage={bgImage} title={"All Foods"}></CommonBanner>
       {/* filtering functionality  */}
-      <div>
-        <FilteringFood setSearchFood={setSearchFood}></FilteringFood>
-      </div>
+
+      <FilteringFood setSearchFood={setSearchFood}></FilteringFood>
+
       {/* card  */}
-      <div className='grid md:grid-cols-2 gap-5 container mx-4 lg:mx-auto'>
+      <div className='grid md:grid-cols-2 gap-4 px-4 xl:px-0 container mx-auto'>
         {searchFood.length > 0
           ? searchFood.map((food) => (
               <FoodCard key={food._id} food={food}></FoodCard>
@@ -68,7 +68,7 @@ const AllFoods = () => {
             ))}
       </div>
       {/* pagination btn  */}
-      <div className='flex flex-row justify-center py-6 gap-3'>
+      <div className='flex flex-row justify-center py-6 gap-2 md:gap-3'>
         <button
           className='btn bg-[#E6C9A2] text-[#0e1927] border border-transparent hover:border-[#E6C9A2] hover:bg-[#5A4C3D] hover:text-[#E6C9A2] capitalize py-2 px-4 rounded-md transition duration-300 ease-in-out '
           onClick={handlePrevBtn}
