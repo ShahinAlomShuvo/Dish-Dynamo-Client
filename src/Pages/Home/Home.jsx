@@ -6,6 +6,7 @@ import OurService from "../../Components/OurService/OurService";
 import NewsLetter from "../../Components/NewsLetter/NewsLetter";
 import { Helmet } from "react-helmet";
 import Banner from "../../Components/Header/Banner/Banner";
+import ComboOffer from "../../Components/ComboOffer/ComboOffer";
 
 const Home = () => {
   const foods = useLoaderData();
@@ -17,6 +18,7 @@ const Home = () => {
       </Helmet>
       {/* <HeroSlider></HeroSlider> */}
       <Banner></Banner>
+      <ComboOffer></ComboOffer>
       <TopFood foods={foods}></TopFood>
       <Counter></Counter>
       <OurService></OurService>
