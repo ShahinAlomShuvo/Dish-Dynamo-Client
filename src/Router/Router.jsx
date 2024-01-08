@@ -73,7 +73,7 @@ const router = createBrowserRouter([
           fetch(`http://localhost:5000/blogs/${params.id}`),
       },
       {
-        path: "/addFood",
+        path: "/add-food",
         element: (
           <PrivateRoute>
             <AddFood></AddFood>
@@ -81,7 +81,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/myAddedFood",
+        path: "/my-added-food",
         element: (
           <PrivateRoute>
             <MyAddedFood></MyAddedFood>
@@ -89,7 +89,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/myOrder",
+        path: "/my-order",
         element: (
           <PrivateRoute>
             <MyOrder></MyOrder>

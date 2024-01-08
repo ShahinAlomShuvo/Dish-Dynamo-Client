@@ -3,6 +3,7 @@ import avatar from "../../../assets/Images/avaar.png";
 import toast from "react-hot-toast";
 import useAuth from "../../../Hooks/useAuth";
 import { useEffect, useState } from "react";
+import NavEnd from "./NavEnd";
 
 const Navbar = () => {
   const { user, signOutUser } = useAuth();
@@ -139,7 +140,8 @@ const Navbar = () => {
         </div>
         <div className='navbar-end space-x-4'>
           {/* nav end content  */}
-          <h3 className='text-lg  font-semibold hidden md:block'>
+          <NavEnd user={user} logOut={logOut}></NavEnd>
+          {/*  <h3 className='text-lg  font-semibold hidden md:block'>
             {user && user.displayName}
           </h3>
 
@@ -169,7 +171,7 @@ const Navbar = () => {
                 Login
               </Link>
             )}
-          </div>
+          </div> */}
         </div>
       </nav>
     </div>
