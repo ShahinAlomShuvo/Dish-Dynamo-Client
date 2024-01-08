@@ -96,12 +96,19 @@ const OrderFood = () => {
           backgroundSize: "cover",
         }}
       >
-        <div className='w-full  p-4   border border-gray-200 rounded-lg shadow sm:p-6 md:p-8  '>
-          <form className='space-y-6' onSubmit={handlePurchaseProduct}>
-            <h5 className='text-xl text-center font-medium text-white dark:text-white'>
-              Purchase A Food
-            </h5>
-            <div className='grid md:grid-cols-2 gap-10 px-16'>
+        <div className='w-full  p-4   pt-20  '>
+          <div className='relative py-10'>
+            <h2 className='text-4xl md:text-6xl font-medium text-center uppercase tracking-[2.7px] pb-4 text-white'>
+              Order Food
+            </h2>
+            <span className='absolute w-36 border-4 border-[#E6C9A2] rounded mt-2 left-1/2 transform -translate-x-1/2'></span>
+          </div>
+
+          <form
+            className='space-y-6 border-2 py-6 rounded lg:border-none'
+            onSubmit={handlePurchaseProduct}
+          >
+            <div className='grid md:grid-cols-2 gap-10 px-4 lg:px-16'>
               {/* food name  */}
               <div className='col-span-2 md:col-span-1'>
                 <label

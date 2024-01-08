@@ -4,6 +4,8 @@ import axios from "axios";
 import { Helmet } from "react-helmet";
 import OrderCard from "./OrderCard";
 import Swal from "sweetalert2";
+import bgImage from "../../assets/Images/commonBg.jpg";
+import CommonBanner from "../../Components/CommonBanner/CommonBanner";
 
 const MyOrder = () => {
   const { user } = useContext(AuthContext);
@@ -56,7 +58,8 @@ const MyOrder = () => {
       <Helmet>
         <title> DishDynamo | MyOrder </title>
       </Helmet>
-      <div className='grid md:grid-cols-2 gap-5 container mx-auto py-10'>
+      <CommonBanner bgImage={bgImage} title={user.displayName}></CommonBanner>
+      <div className='grid md:grid-cols-2 gap-5 container mx-auto py-10 px-4 xl:px-0'>
         {orders.length === 0 ? (
           <p className='col-span-2 text-center'>No Order Product</p>
         ) : (

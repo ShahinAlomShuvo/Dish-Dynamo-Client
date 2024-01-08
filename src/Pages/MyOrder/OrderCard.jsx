@@ -11,12 +11,12 @@ const OrderCard = ({ order, deleteHandler }) => {
 
   return (
     <div data-aos='fade-up'>
-      <div className='card card-side bg-base-100 shadow-xl'>
+      <div className='card flex-wrap  lg:flex-nowrap card-side bg-base-100 shadow-xl'>
         <figure>
-          <img src={foodImageUrl} />
+          <img className='max-w-full h-full' src={foodImageUrl} />
         </figure>
         <div className='card-body w-full'>
-          <h2 className='card-title'>{foodName}</h2>
+          <h2 className='card-title lg:text-base xl:text-xl'>{foodName}</h2>
           <p>Price: ${price}</p>
           <p>Buyer Name:{userName}</p>
           <p>Buying Date:{buyingDate}</p>

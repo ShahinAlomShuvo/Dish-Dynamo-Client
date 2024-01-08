@@ -27,7 +27,7 @@ const FilteringFood = ({ setSearchFood }) => {
         <div className='relative'>
           <div className='absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none'>
             <svg
-              className='w-4 h-4 text-[#FF7C08] dark:text-[#FF7C08]'
+              className='w-4 h-4 text-[#5A4C3D] dark:text-[#5A4C3D]'
               aria-hidden='true'
               xmlns='http://www.w3.org/2000/svg'
               fill='none'
@@ -46,13 +46,13 @@ const FilteringFood = ({ setSearchFood }) => {
             type='search'
             name='searchValue'
             id='default-search'
-            className='block w-full p-4 pl-10 text-sm text-[#FF7C08] border border-[#FF7C08] rounded-lg bg-gray-50 focus:ring-[#FF7C08] focus:border-[#FF7C08] dark:bg-white dark:border-[#FF7C08] dark:placeholder-[#FF7C08] dark:text-[#FF7C08] dark:focus:ring-[#FF7C08] dark:focus:border-[#FF7C08]'
+            className='block w-full p-4 pl-10 text-sm text-[#E6C9A2] border border-[#E6C9A2] rounded-lg bg-gray-50 focus:ring-[#E6C9A2] focus:border-[#E6C9A2] dark:bg-white dark:border-[#E6C9A2] dark:placeholder-[#E6C9A2] dark:text-[#E6C9A2] dark:focus:ring-[#E6C9A2] dark:focus:border-[#E6C9A2]'
             placeholder='Search Foods By Name'
             required
           />
           <button
             type='submit'
-            className='text-white absolute right-2.5 bottom-2.5 bg-[#FF7C08] hover:bg-[#FF7C08] focus:ring-4 focus:outline-none focus:ring-[#FF7C08] font-medium rounded-lg text-sm px-4 py-2 dark:bg-[#FF7C08] dark:hover:bg-[#FF7C08] dark:focus:ring-[#FF7C08]'
+            className='text-[#0e1927] absolute right-2.5 bottom-2.5 bg-[#E6C9A2] hover:bg-[#E6C9A2] focus:ring-4 focus:outline-none focus:ring-[#E6C9A2] font-medium rounded-lg text-sm px-4 py-2 dark:bg-[#E6C9A2] dark:hover:bg-[#E6C9A2] dark:focus:ring-[#E6C9A2]'
           >
             Search
           </button>
