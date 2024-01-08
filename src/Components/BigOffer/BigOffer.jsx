@@ -9,12 +9,12 @@ const BigOffer = () => {
         backgroundImage: `url(${offerBg2})`,
       }}
     >
-      <div className='grid md:grid-cols-2 gap-20'>
+      <div className='grid md:grid-cols-2 gap-20 overflow-hidden'>
         <img className='animate-slide-right ' src={delivery} alt='' />
-        <div className='text-white flex flex-col justify-center italic space-y-4'>
-          <p className='text-5xl font-bold ml-5'>Big Offer</p>
-          <p className='text-6xl font-bold ml-3'>Free Delivery</p>
-          <p className='text-7xl font-bold'>Order! Order!</p>
+        <div className='text-white md:flex flex-col justify-center  italic space-y-4 hidden'>
+          <p className=' text-3xl lg:text-5xl font-bold ml-5'>Big Offer</p>
+          <p className=' text-4xl lg:text-6xl font-bold ml-3'>Free Delivery</p>
+          <p className=' text-5xl lg:text-7xl font-bold'>Order! Order!</p>
         </div>
       </div>
     </div>

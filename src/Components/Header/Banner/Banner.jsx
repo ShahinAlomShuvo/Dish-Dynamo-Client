@@ -10,8 +10,8 @@ const Banner = () => {
   return (
     <div className='h-screen flex items-center relative' style={overlayStyle}>
       <div className='absolute inset-0 bg-black opacity-70'></div>
-      <div className='container mx-auto text-white relative  px-4  xl:px-0'>
-        <h2 className='text-6xl font-medium mb-4 uppercase tracking-[2.7px] leading-tight'>
+      <div className='container mx-auto text-white relative  px-4  xl:px-0 pt-16 md:pt-0'>
+        <h2 className='text-4xl md:text-6xl font-medium mb-4 uppercase tracking-[2.7px] leading-tight'>
           It’s time to enjoy <br />
           the finer things in life.
         </h2>

@@ -88,7 +88,7 @@ const Navbar = () => {
     <div
       className={`fixed w-full z-50 bg-[#0E1927] ${navBackgroundClass} transition-opacity duration-200`}
     >
-      <nav className='navbar container mx-auto text-white'>
+      <nav className='navbar container mx-auto text-white lg:px-4 xl:px-0'>
         <div className='navbar-start'>
           <div className='dropdown'>
             <div className='drawer'>
