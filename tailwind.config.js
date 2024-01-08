@@ -12,8 +12,8 @@ export default {
     },
     keyframes: {
       "slide-right": {
-        "0%": { transform: "translateX(-100%)" },
-        "100%": { transform: "translateX(0%)" },
+        "0%": { transform: "translateX(-10%)" },
+        "100%": { transform: "translateX(20%)" },
       },
     },
   },
