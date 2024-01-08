@@ -69,6 +69,18 @@ const Navbar = () => {
           All Foods
         </NavLink>
       </li>
+      <li>
+        <NavLink
+          to={"/about-us"}
+          className={({ isActive }) =>
+            isActive
+              ? "text-[#E6C9A2] border-b-2 border-transparent pb-2 transition-colors duration-300"
+              : "text-white border-b-2 border-transparent pb-2 transition-colors duration-300 hover:text-[#E6C9A2] hover:border-[#E6C9A2]"
+          }
+        >
+          About Us
+        </NavLink>
+      </li>
     </>
   );
 

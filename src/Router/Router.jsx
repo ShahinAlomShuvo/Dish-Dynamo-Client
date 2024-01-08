@@ -15,6 +15,7 @@ import OrderFood from "../Pages/OrderFood/OrderFood";
 import MyOrder from "../Pages/MyOrder/MyOrder";
 import UpdateFood from "../Pages/MyAddedFood/UpdateFood";
 import AllFoods from "../Pages/AllFoods/AllFoods";
+import AboutUs from "../Pages/AboutUs/AboutUs";
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(`https://dish-dynamo-server.vercel.app/foods/${params.id}`),
+      },
+      {
+        path: "/about-us",
+        element: <AboutUs></AboutUs>,
       },
       {
         path: "/logIn",
