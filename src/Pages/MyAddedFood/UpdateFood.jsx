@@ -47,10 +47,7 @@ const UpdateFood = () => {
     e.target.reset();
 
     axios
-      .put(
-        `https://dish-dynamo-server.vercel.app/usersfood/${userFood._id}`,
-        updateFood
-      )
+      .put(`http://localhost:5000/usersfood/${userFood._id}`, updateFood)
       .then((res) => {
         console.log(res.data);
         if (res.data.modifiedCount) {

@@ -26,18 +26,18 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("https://dish-dynamo-server.vercel.app/foods"),
+        loader: () => fetch("http://localhost:5000/foods"),
       },
       {
         path: "/allFoods",
         element: <AllFoods></AllFoods>,
-        loader: () => fetch("https://dish-dynamo-server.vercel.app/foodsCount"),
+        loader: () => fetch("http://localhost:5000/foodsCount"),
       },
       {
         path: "/foodDetails/:id",
         element: <FoodDetails></FoodDetails>,
         loader: ({ params }) =>
-          fetch(`https://dish-dynamo-server.vercel.app/foods/${params.id}`),
+          fetch(`http://localhost:5000/foods/${params.id}`),
       },
       {
         path: "/orderingFood/:id",
@@ -47,7 +47,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`https://dish-dynamo-server.vercel.app/foods/${params.id}`),
+          fetch(`http://localhost:5000/foods/${params.id}`),
       },
       {
         path: "/about-us",
@@ -64,13 +64,13 @@ const router = createBrowserRouter([
       {
         path: "/blog",
         element: <Blog></Blog>,
-        loader: () => fetch("https://dish-dynamo-server.vercel.app/blogs"),
+        loader: () => fetch("http://localhost:5000/blogs"),
       },
       {
         path: "/blogPost/:id",
         element: <BlogPost></BlogPost>,
         loader: ({ params }) =>
-          fetch(`https://dish-dynamo-server.vercel.app/blogs/${params.id}`),
+          fetch(`http://localhost:5000/blogs/${params.id}`),
       },
       {
         path: "/addFood",
@@ -100,7 +100,7 @@ const router = createBrowserRouter([
         path: "/foodUpdate/:id",
         element: <UpdateFood></UpdateFood>,
         loader: ({ params }) =>
-          fetch(`https://dish-dynamo-server.vercel.app/usersfood/${params.id}`),
+          fetch(`http://localhost:5000/usersfood/${params.id}`),
       },
     ],
   },

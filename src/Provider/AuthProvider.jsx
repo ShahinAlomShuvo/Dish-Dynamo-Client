@@ -75,7 +75,7 @@ const AuthProvider = ({ children }) => {
 
       if (currentUser) {
         axios
-          .post("https://dish-dynamo-server.vercel.app/jwt", loggedUser, {
+          .post("http://localhost:5000/jwt", loggedUser, {
             withCredentials: true,
           })
           .then((res) => {
@@ -83,7 +83,7 @@ const AuthProvider = ({ children }) => {
           });
       } else {
         axios
-          .post("https://dish-dynamo-server.vercel.app/logOut", loggedUser, {
+          .post("http://localhost:5000/logOut", loggedUser, {
             withCredentials: true,
           })
           .then((res) => {

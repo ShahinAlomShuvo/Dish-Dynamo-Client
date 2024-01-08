@@ -1,5 +1,5 @@
 import { useLoaderData } from "react-router-dom";
-import FoodCart from "../../Components/TopFood/FoodCart";
+import FoodCard from "../../Components/TopFood/FoodCard";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import FilteringFood from "./FilteringFood";
@@ -20,7 +20,7 @@ const AllFoods = () => {
   useEffect(() => {
     axios
       .get(
-        `https://dish-dynamo-server.vercel.app/allFoods?page=${getCurrentPage}&size=${itemsPerPage}`
+        `http://localhost:5000/allFoods?page=${getCurrentPage}&size=${itemsPerPage}`
       )
       .then((res) => {
         setAllFoods(res.data);
@@ -61,10 +61,10 @@ const AllFoods = () => {
       <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-5 container mx-4 lg:mx-auto'>
         {searchFood.length > 0
           ? searchFood.map((food) => (
-              <FoodCart key={food._id} food={food}></FoodCart>
+              <FoodCard key={food._id} food={food}></FoodCard>
             ))
           : allFoods?.map((food) => (
-              <FoodCart key={food._id} food={food}></FoodCart>
+              <FoodCard key={food._id} food={food}></FoodCard>
             ))}
       </div>
       {/* pagination btn  */}

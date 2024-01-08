@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import SectionHeading from "../../Shared/SectionHeading";
-import FoodCart from "./FoodCart";
+import FoodCard from "./FoodCard";
 
 const TopFood = ({ foods }) => {
   return (
-    <div>
+    <div className='bg-base-200'>
       <SectionHeading
         title={"Our Top Food"}
         desc={
@@ -12,9 +12,9 @@ const TopFood = ({ foods }) => {
         }
       ></SectionHeading>
 
-      <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-10 container mx-4 lg:mx-auto'>
+      <div className='grid md:grid-cols-2 lg:grid-cols-2 gap-10 container mx-4 lg:mx-auto'>
         {foods.map((food) => (
-          <FoodCart key={food._id} food={food}></FoodCart>
+          <FoodCard key={food._id} food={food}></FoodCard>
         ))}
       </div>
       <div className='flex justify-center py-10'>

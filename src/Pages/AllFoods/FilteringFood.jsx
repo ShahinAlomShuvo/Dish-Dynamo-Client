@@ -7,7 +7,7 @@ const FilteringFood = ({ setSearchFood }) => {
     console.log(searchValue);
 
     axios
-      .get("https://dish-dynamo-server.vercel.app/allFoods", {
+      .get("http://localhost:5000/allFoods", {
         params: { searchValue },
       })
       .then((res) => {

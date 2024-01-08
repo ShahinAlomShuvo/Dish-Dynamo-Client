@@ -41,11 +41,9 @@ const LogIn = () => {
           email: res.user.email,
         };
 
-        axios
-          .post("https://dish-dynamo-server.vercel.app/users", user)
-          .then((res) => {
-            console.log(res.data);
-          });
+        axios.post("http://localhost:5000/users", user).then((res) => {
+          console.log(res.data);
+        });
       })
       .catch((err) => {
         console.log(err.message);
