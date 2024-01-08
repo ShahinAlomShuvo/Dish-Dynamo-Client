@@ -31,7 +31,10 @@ const AddedFoodRow = ({ food }) => {
       <td>{quantity}</td>
       <td>$ {price}</td>
       <th>
-        <Link to={`/foodUpdate/${_id}`} className='btn btn-warning'>
+        <Link
+          to={`/foodUpdate/${_id}`}
+          className='btn bg-[#E6C9A2] text-[#0e1927] border border-transparent hover:border-[#E6C9A2] hover:bg-transparent  capitalize py-2 px-4 rounded-md transition duration-300 ease-in-out '
+        >
           Update
         </Link>
       </th>

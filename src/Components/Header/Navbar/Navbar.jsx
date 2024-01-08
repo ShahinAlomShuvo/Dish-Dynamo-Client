@@ -46,18 +46,7 @@ const Navbar = () => {
           Home
         </NavLink>
       </li>
-      <li>
-        <NavLink
-          to={"/blog"}
-          className={({ isActive }) =>
-            isActive
-              ? "text-[#E6C9A2] border-b-2 border-transparent pb-2 transition-colors duration-300"
-              : "text-white border-b-2 border-transparent pb-2 transition-colors duration-300 hover:text-[#E6C9A2] hover:border-[#E6C9A2]"
-          }
-        >
-          Blog
-        </NavLink>
-      </li>
+
       <li>
         <NavLink
           to={"/allFoods"}
@@ -80,6 +69,18 @@ const Navbar = () => {
           }
         >
           About Us
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to={"/blog"}
+          className={({ isActive }) =>
+            isActive
+              ? "text-[#E6C9A2] border-b-2 border-transparent pb-2 transition-colors duration-300"
+              : "text-white border-b-2 border-transparent pb-2 transition-colors duration-300 hover:text-[#E6C9A2] hover:border-[#E6C9A2]"
+          }
+        >
+          Blog
         </NavLink>
       </li>
     </>
@@ -141,37 +142,6 @@ const Navbar = () => {
         <div className='navbar-end space-x-4'>
           {/* nav end content  */}
           <NavEnd user={user} logOut={logOut}></NavEnd>
-          {/*  <h3 className='text-lg  font-semibold hidden md:block'>
-            {user && user.displayName}
-          </h3>
-
-          <div className={`dropdown dropdown-end ${user ? "block" : "hidden"}`}>
-            <div tabIndex={0} className='avatar hover:cursor-pointer'>
-              <div className='w-9 md:w-11 rounded-full'>
-                <img
-                  src={user && user.photoURL ? user.photoURL : avatar}
-                  alt='User Avatar'
-                />
-              </div>
-            </div>
-          </div>
-          <div>
-            {user ? (
-              <button
-                onClick={logOut}
-                className='btn bg-[#E6C9A2] text-[#0e1927] border border-transparent hover:border-[#E6C9A2] hover:bg-transparent hover:text-[#E6C9A2] capitalize py-2 px-4 rounded-md transition duration-300 ease-in-out '
-              >
-                Log Out
-              </button>
-            ) : (
-              <Link
-                to={"/login"}
-                className='btn bg-[#E6C9A2] text-[#0e1927] border border-transparent hover:border-[#E6C9A2] hover:bg-transparent hover:text-[#E6C9A2] capitalize py-2 px-4 rounded-md transition duration-300 ease-in-out '
-              >
-                Login
-              </Link>
-            )}
-          </div> */}
         </div>
       </nav>
     </div>
