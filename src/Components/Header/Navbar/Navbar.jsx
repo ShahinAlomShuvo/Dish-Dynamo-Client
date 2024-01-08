@@ -74,7 +74,7 @@ const Navbar = () => {
 
   return (
     <div
-      className={`fixed w-full z-10 bg-[#0E1927] ${navBackgroundClass} transition-opacity duration-200`}
+      className={`fixed w-full z-50 bg-[#0E1927] ${navBackgroundClass} transition-opacity duration-200`}
     >
       <nav className='navbar container mx-auto text-white'>
         <div className='navbar-start'>

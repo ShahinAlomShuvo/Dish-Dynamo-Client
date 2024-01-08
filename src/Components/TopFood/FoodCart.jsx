@@ -53,7 +53,7 @@ const FoodCart = ({ food }) => {
           <div className='pt-4'>
             <Link
               to={`/foodDetails/${_id}`}
-              className='btn bg-[#FF7C08] text-white border border-transparent hover:border-[#FF7C08] hover:bg-transparent hover:text-[#FF7C08] capitalize py-2 px-4 rounded-md transition duration-300 ease-in-out btn-block'
+              className='btn bg-[#E6C9A2] text-[#0e1927] border border-transparent hover:border-[#E6C9A2] hover:bg-[#5A4C3D] hover:text-[#E6C9A2] capitalize py-2 px-4 rounded-md transition duration-300 ease-in-out btn-block'
             >
               Details
             </Link>
