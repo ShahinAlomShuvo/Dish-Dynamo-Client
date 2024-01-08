@@ -3,7 +3,7 @@ import Root from "../Layout/Root";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Home from "../Pages/Home/Home";
 import FoodDetails from "../Components/FoodDetails/FoodDetails";
-import AllFoods from "../Components/AllFoods/AllFoods";
+
 import LogIn from "../Pages/LogIn/LogIn";
 import Registration from "../Pages/Registration/Registration";
 import Blog from "../Pages/BlogPage/Blog";
@@ -14,6 +14,7 @@ import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import OrderFood from "../Pages/OrderFood/OrderFood";
 import MyOrder from "../Pages/MyOrder/MyOrder";
 import UpdateFood from "../Pages/MyAddedFood/UpdateFood";
+import AllFoods from "../Pages/AllFoods/AllFoods";
 
 const router = createBrowserRouter([
   {

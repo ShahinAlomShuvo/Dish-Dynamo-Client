@@ -1,9 +1,11 @@
 import { useLoaderData } from "react-router-dom";
-import FoodCart from "../TopFood/FoodCart";
+import FoodCart from "../../Components/TopFood/FoodCart";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import FilteringFood from "./FilteringFood";
 import { Helmet } from "react-helmet";
+import CommonBanner from "../../Components/CommonBanner/CommonBanner";
+import bgImage from "../../assets/Images/commonBanner1.jpg";
 
 const AllFoods = () => {
   const { count } = useLoaderData();
@@ -50,6 +52,7 @@ const AllFoods = () => {
       <Helmet>
         <title> DishDynamo | AllFoods </title>
       </Helmet>
+      <CommonBanner bgImage={bgImage} title={"All Foods"}></CommonBanner>
       {/* filtering functionality  */}
       <div>
         <FilteringFood setSearchFood={setSearchFood}></FilteringFood>
