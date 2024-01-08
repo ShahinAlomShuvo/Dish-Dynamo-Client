@@ -21,7 +21,7 @@ const FoodCart = ({ food }) => {
     <div>
       <div
         data-aos='zoom-in'
-        className='relative flex flex-col text-gray-700 bg-white shadow-md w-96 rounded-xl bg-clip-border'
+        className='relative flex flex-col text-gray-700 bg-white shadow-md  rounded-xl bg-clip-border'
       >
         <div className='relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white h-96 rounded-xl bg-clip-border'>
           <img

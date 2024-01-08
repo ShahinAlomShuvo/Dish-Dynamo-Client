@@ -5,6 +5,7 @@ import Counter from "../../Components/Counter/Counter";
 import OurService from "../../Components/OurService/OurService";
 import NewsLetter from "../../Components/NewsLetter/NewsLetter";
 import { Helmet } from "react-helmet";
+import Banner from "../../Components/Header/Banner/Banner";
 
 const Home = () => {
   const foods = useLoaderData();
@@ -14,7 +15,8 @@ const Home = () => {
       <Helmet>
         <title> DishDynamo | Home </title>
       </Helmet>
-      <HeroSlider></HeroSlider>
+      {/* <HeroSlider></HeroSlider> */}
+      <Banner></Banner>
       <TopFood foods={foods}></TopFood>
       <Counter></Counter>
       <OurService></OurService>
