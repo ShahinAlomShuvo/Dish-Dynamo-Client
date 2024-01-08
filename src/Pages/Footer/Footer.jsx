@@ -1,12 +1,16 @@
 import { Link } from "react-router-dom";
 import shape from "../../assets/Images/heading_shapes_1.png";
 import { FaFacebook, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
+import footer1 from "../../assets/Images/footer-1.png";
+import footer2 from "../../assets/Images/footer-2.png";
 
 const Footer = () => {
   return (
-    <footer className='py-10 bg-gray-900 sm:pt-16 lg:pt-24'>
+    <footer className='py-10 bg-[#2d2723] sm:pt-16 lg:pt-24 relative'>
+      <img className='absolute left-0 bottom-0' src={footer1} alt='' />
+      <img className='absolute top-0 right-0' src={footer2} alt='' />
       <div className='px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl'>
-        <div className='footer grid-cols-2  md:grid-cols-4 p-10 bg-neutral text-neutral-content rounded'>
+        <div className='footer grid-cols-2  md:grid-cols-4 p-10 text-white rounded'>
           <aside>
             <h2 className='text-lg lg:text-3xl font-bold'>DishDynamo</h2>
             <p>
@@ -16,14 +20,14 @@ const Footer = () => {
             </p>
           </aside>
           <nav>
-            <header className='footer-title'>My Account</header>
+            <header className='footer-title opacity-100'>My Account</header>
             <a className='link link-hover'>Order History</a>
             <a className='link link-hover'>My Food</a>
             <a className='link link-hover'>Add Food</a>
             <a className='link link-hover'>My Add Food</a>
           </nav>
           <nav>
-            <header className='footer-title'>Company</header>
+            <header className='footer-title opacity-100'>Company</header>
             <Link to={"/"} className='link link-hover'>
               Home
             </Link>
@@ -36,14 +40,14 @@ const Footer = () => {
             </Link>
           </nav>
           <nav>
-            <header className='footer-title'>Legal</header>
+            <header className='footer-title opacity-100'>Legal</header>
             <a className='link link-hover'>Terms of use</a>
             <a className='link link-hover'>Privacy policy</a>
             <a className='link link-hover'>Cookie policy</a>
           </nav>
         </div>
 
-        <hr className='mt-16 mb-10 border-gray-800' />
+        <hr className='mt-16 mb-10 border-white' />
 
         <div className='flex flex-wrap items-center justify-between'>
           <div className='flex flex-row-reverse gap-2'>

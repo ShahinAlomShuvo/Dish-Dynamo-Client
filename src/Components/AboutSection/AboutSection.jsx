@@ -53,7 +53,8 @@ const AboutSection = () => {
         </div>
       </div>
       <img
-        className='absolute right-8 bottom-8 animate-bounce'
+        className='absolute right-8 bottom-8 animate-slide-right
+        '
         src={iconBg2}
         alt=''
       />
