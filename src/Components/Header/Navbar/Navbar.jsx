@@ -1,5 +1,4 @@
 import { Link, NavLink } from "react-router-dom";
-import avatar from "../../../assets/Images/avaar.png";
 import toast from "react-hot-toast";
 import useAuth from "../../../Hooks/useAuth";
 import { useEffect, useState } from "react";
@@ -73,6 +72,18 @@ const Navbar = () => {
       </li>
       <li>
         <NavLink
+          to={"/features"}
+          className={({ isActive }) =>
+            isActive
+              ? "text-[#E6C9A2] border-b-2 border-transparent pb-2 transition-colors duration-300"
+              : "text-white border-b-2 border-transparent pb-2 transition-colors duration-300 hover:text-[#E6C9A2] hover:border-[#E6C9A2]"
+          }
+        >
+          Features
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
           to={"/contact-us"}
           className={({ isActive }) =>
             isActive
@@ -83,7 +94,7 @@ const Navbar = () => {
           Contact Us
         </NavLink>
       </li>
-      <li>
+      {/* <li>
         <NavLink
           to={"/blog"}
           className={({ isActive }) =>
@@ -94,7 +105,7 @@ const Navbar = () => {
         >
           Blog
         </NavLink>
-      </li>
+      </li> */}
     </>
   );
 

@@ -17,6 +17,7 @@ import UpdateFood from "../Pages/MyAddedFood/UpdateFood";
 import AllFoods from "../Pages/AllFoods/AllFoods";
 import AboutUs from "../Pages/AboutUs/AboutUs";
 import ContactUs from "../Pages/ContactUs/ContactUs";
+import Features from "../Pages/Features/Features";
 
 const router = createBrowserRouter([
   {
@@ -57,6 +58,10 @@ const router = createBrowserRouter([
       {
         path: "/contact-us",
         element: <ContactUs></ContactUs>,
+      },
+      {
+        path: "/features",
+        element: <Features></Features>,
       },
       {
         path: "/logIn",

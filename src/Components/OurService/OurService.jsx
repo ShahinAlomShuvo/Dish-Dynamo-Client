@@ -3,6 +3,7 @@ import food from "../../assets/Images/eggFood.jpg";
 import SectionHeading from "../../Shared/SectionHeading";
 import { useEffect } from "react";
 import Aos from "aos";
+
 const OurService = () => {
   useEffect(() => {
     Aos.init({ duration: 2000 });

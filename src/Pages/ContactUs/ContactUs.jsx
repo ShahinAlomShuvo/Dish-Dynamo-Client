@@ -55,7 +55,7 @@ const ContactUs = () => {
         </div>
       </div>
       <div className='text-center space-y-2 py-10 px-4 md:px-0'>
-        <h2 className='text-[##0e1927] text-3xl md:text-4xl font-medium tracking-[2px]'>
+        <h2 className='text-[#0e1927] text-3xl md:text-4xl font-medium tracking-[2px]'>
           JUST DROP A LINE!
         </h2>
         <p className='text-[#666666] md:w-3/5 mx-auto'>
