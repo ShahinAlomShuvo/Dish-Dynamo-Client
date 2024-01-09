@@ -73,6 +73,18 @@ const Navbar = () => {
       </li>
       <li>
         <NavLink
+          to={"/contact-us"}
+          className={({ isActive }) =>
+            isActive
+              ? "text-[#E6C9A2] border-b-2 border-transparent pb-2 transition-colors duration-300"
+              : "text-white border-b-2 border-transparent pb-2 transition-colors duration-300 hover:text-[#E6C9A2] hover:border-[#E6C9A2]"
+          }
+        >
+          Contact Us
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
           to={"/blog"}
           className={({ isActive }) =>
             isActive

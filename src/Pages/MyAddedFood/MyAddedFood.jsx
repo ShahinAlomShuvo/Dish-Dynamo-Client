@@ -13,7 +13,7 @@ const MyAddedFood = () => {
   const [usersFood, setUsersFood] = useState([]);
 
   useEffect(() => {
-    const url = `http://localhost:5000/usersfood?email=${user?.email}`;
+    const url = `https://dish-dynamo-server.vercel.app/usersfood?email=${user?.email}`;
     axios.get(url, { withCredentials: true }).then((res) => {
       setUsersFood(res.data);
     });

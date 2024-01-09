@@ -32,12 +32,14 @@ const AddFood = () => {
     };
     e.target.reset();
 
-    axios.post("http://localhost:5000/usersfood", newFood).then((res) => {
-      console.log(res.data);
-      if (res.data.insertedId) {
-        toast.success("Product Added Successfully");
-      }
-    });
+    axios
+      .post("https://dish-dynamo-server.vercel.app/usersfood", newFood)
+      .then((res) => {
+        console.log(res.data);
+        if (res.data.insertedId) {
+          toast.success("Product Added Successfully");
+        }
+      });
   };
   return (
     <>

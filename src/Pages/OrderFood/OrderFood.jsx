@@ -53,7 +53,7 @@ const OrderFood = () => {
     }
 
     axios
-      .post("http://localhost:5000/orderingfoods", purchaseFood)
+      .post("https://dish-dynamo-server.vercel.app/orderingfoods", purchaseFood)
       .then((res) => {
         console.log(res.data);
         if (res.data.insertedId) {
@@ -64,7 +64,7 @@ const OrderFood = () => {
     // count order
 
     axios
-      .put(`http://localhost:5000/foods/${_id}`, {
+      .put(`https://dish-dynamo-server.vercel.app/foods/${_id}`, {
         orders: ordersCount + 1,
       })
       .then((response) => {
@@ -74,7 +74,7 @@ const OrderFood = () => {
     //   count quantity
 
     axios
-      .patch(`http://localhost:5000/foods/${_id}`, {
+      .patch(`https://dish-dynamo-server.vercel.app/foods/${_id}`, {
         quantity: quantity - 1,
       })
       .then((response) => {

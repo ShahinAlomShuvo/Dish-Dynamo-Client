@@ -16,6 +16,7 @@ import MyOrder from "../Pages/MyOrder/MyOrder";
 import UpdateFood from "../Pages/MyAddedFood/UpdateFood";
 import AllFoods from "../Pages/AllFoods/AllFoods";
 import AboutUs from "../Pages/AboutUs/AboutUs";
+import ContactUs from "../Pages/ContactUs/ContactUs";
 
 const router = createBrowserRouter([
   {
@@ -26,18 +27,18 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/foods"),
+        loader: () => fetch("https://dish-dynamo-server.vercel.app/foods"),
       },
       {
         path: "/allFoods",
         element: <AllFoods></AllFoods>,
-        loader: () => fetch("http://localhost:5000/foodsCount"),
+        loader: () => fetch("https://dish-dynamo-server.vercel.app/foodsCount"),
       },
       {
         path: "/foodDetails/:id",
         element: <FoodDetails></FoodDetails>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/foods/${params.id}`),
+          fetch(`https://dish-dynamo-server.vercel.app/foods/${params.id}`),
       },
       {
         path: "/orderingFood/:id",
@@ -47,11 +48,15 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/foods/${params.id}`),
+          fetch(`https://dish-dynamo-server.vercel.app/foods/${params.id}`),
       },
       {
         path: "/about-us",
         element: <AboutUs></AboutUs>,
+      },
+      {
+        path: "/contact-us",
+        element: <ContactUs></ContactUs>,
       },
       {
         path: "/logIn",
@@ -64,13 +69,13 @@ const router = createBrowserRouter([
       {
         path: "/blog",
         element: <Blog></Blog>,
-        loader: () => fetch("http://localhost:5000/blogs"),
+        loader: () => fetch("https://dish-dynamo-server.vercel.app/blogs"),
       },
       {
         path: "/blogPost/:id",
         element: <BlogPost></BlogPost>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/blogs/${params.id}`),
+          fetch(`https://dish-dynamo-server.vercel.app/blogs/${params.id}`),
       },
       {
         path: "/add-food",
@@ -100,7 +105,7 @@ const router = createBrowserRouter([
         path: "/foodUpdate/:id",
         element: <UpdateFood></UpdateFood>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/usersfood/${params.id}`),
+          fetch(`https://dish-dynamo-server.vercel.app/usersfood/${params.id}`),
       },
     ],
   },

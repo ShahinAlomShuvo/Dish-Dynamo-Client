@@ -3,8 +3,13 @@ import CommonBanner from "../../Components/CommonBanner/CommonBanner";
 import aboutUs from "../../assets/Images/aboutUs.jpg";
 import ManagementTeam from "./ManagementTeam";
 import AboutSection from "../../Components/AboutSection/AboutSection";
+import { useEffect } from "react";
+import Aos from "aos";
 
 const AboutUs = () => {
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
   return (
     <>
       <Helmet>
@@ -12,13 +17,13 @@ const AboutUs = () => {
       </Helmet>
       <CommonBanner bgImage={aboutUs} title={"About Us"}></CommonBanner>
       <div className='container mx-auto grid md:grid-cols-3 gap-8 items-center py-20 px-4 xl-px-0'>
-        <div>
+        <div data-aos='zoom-in'>
           <h2 className='text-right text-3xl lg:text-4xl leading-10'>
             Hi! Our Restaurant has been present for over 20 years in the market.
             We make the most of all our customers.
           </h2>
         </div>
-        <div>
+        <div data-aos='zoom-in'>
           <p className='text-[#7e7e7e]'>
             At DishDynamo, we take pride in sourcing only the freshest, most
             exquisite ingredients to craft dishes that ignite the senses and
@@ -27,7 +32,7 @@ const AboutUs = () => {
             celebrate the diversity of tastes and preferences.
           </p>
         </div>
-        <div>
+        <div data-aos='zoom-in'>
           <p className='text-[#7e7e7e]'>
             Our team consists of dedicated culinary artisans and attentive
             service professionals, all united by a passion for delivering

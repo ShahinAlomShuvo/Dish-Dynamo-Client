@@ -9,10 +9,15 @@ import combo5 from "../../assets/Images/combo5.jpg";
 import combo6 from "../../assets/Images/combo6.jpg";
 import SectionHeading from "../../Shared/SectionHeading";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useEffect } from "react";
+import Aos from "aos";
 
 const ComboOffer = () => {
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
   return (
-    <div>
+    <div data-aos='fade-up'>
       <SectionHeading
         title={"Combo Offer"}
         desc={"Eat Freely Without Worrying About The Price"}

@@ -20,7 +20,7 @@ const AllFoods = () => {
   useEffect(() => {
     axios
       .get(
-        `http://localhost:5000/allFoods?page=${getCurrentPage}&size=${itemsPerPage}`
+        `https://dish-dynamo-server.vercel.app/allFoods?page=${getCurrentPage}&size=${itemsPerPage}`
       )
       .then((res) => {
         setAllFoods(res.data);

@@ -2,12 +2,17 @@ import owner from "../../assets/Images/owner.jpg";
 import customerCare from "../../assets/Images/customer-careist.jpg";
 import coFounder from "../../assets/Images/co-founder.jpg";
 import specialist from "../../assets/Images/specialist.jpg";
+import { useEffect } from "react";
+import Aos from "aos";
 
 const ManagementTeam = () => {
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
   return (
     <div className='container mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-6 px-4 xl:px-0'>
       {/* owner  */}
-      <div className='card  bg-base-100 '>
+      <div data-aos='zoom-in' className='card  bg-base-100 '>
         <figure>
           <img src={owner} className='rounded-xl' />
         </figure>
@@ -17,7 +22,7 @@ const ManagementTeam = () => {
         </div>
       </div>
       {/* co-founder  */}
-      <div className='card  bg-base-100 '>
+      <div data-aos='zoom-in' className='card  bg-base-100 '>
         <figure>
           <img src={coFounder} className='rounded-xl' />
         </figure>
@@ -27,7 +32,7 @@ const ManagementTeam = () => {
         </div>
       </div>
       {/* CUSTOMER CARE */}
-      <div className='card  bg-base-100 '>
+      <div data-aos='zoom-in' className='card  bg-base-100 '>
         <figure>
           <img src={customerCare} className='rounded-xl' />
         </figure>
@@ -37,7 +42,7 @@ const ManagementTeam = () => {
         </div>
       </div>
       {/* Specialist */}
-      <div className='card  bg-base-100 '>
+      <div data-aos='zoom-in' className='card  bg-base-100 '>
         <figure>
           <img src={specialist} className='rounded-xl' />
         </figure>

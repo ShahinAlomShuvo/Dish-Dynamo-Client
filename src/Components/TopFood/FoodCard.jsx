@@ -21,7 +21,7 @@ const FoodCard = ({ food }) => {
   return (
     <>
       <div
-        // data-aos='zoom-in'
+        data-aos='zoom-in'
         className='border-2 border-base-300 rounded-2xl p-6 hover:shadow-lg hover:border-transparent bg-white transition '
       >
         <div className='grid lg:grid-cols-3  items-center gap-6'>

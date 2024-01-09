@@ -15,7 +15,7 @@ const AboutSection = () => {
     <div data-aos='fade-up' className='bg-[#FFF4EA] relative overflow-hidden'>
       <img className='absolute -top-10 -right-10 z-1' src={iconBg} alt='' />
       <div className='grid px-8 lg:px-4 xl:px-0 lg:grid-cols-2 gap-10 container mx-auto my-20 py-10 pb-40 xl:pb-0'>
-        <img className='z-10' src={about} alt='' />
+        <img data-aos='zoom-in' className='z-10' src={about} alt='' />
         <div className='xl:pt-16 space-y-6 z-10'>
           <h2 className='text-5xl font-semibold text-[#0c0c0c] tracking-wide leading-tight'>
             There is a Whole <br /> Universe in Every Bite.

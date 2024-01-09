@@ -38,9 +38,11 @@ const Registration = () => {
         toast.success("Registration Successful");
         console.log(res.user);
 
-        axios.post("http://localhost:5000/users", user).then((res) => {
-          console.log(res.data);
-        });
+        axios
+          .post("https://dish-dynamo-server.vercel.app/users", user)
+          .then((res) => {
+            console.log(res.data);
+          });
       })
       .catch((err) => {
         console.log(err);
@@ -61,9 +63,11 @@ const Registration = () => {
           email: res.user.email,
         };
 
-        axios.post("http://localhost:5000/users", user).then((res) => {
-          console.log(res.data);
-        });
+        axios
+          .post("https://dish-dynamo-server.vercel.app/users", user)
+          .then((res) => {
+            console.log(res.data);
+          });
       })
       .catch((error) => {
         console.log(error);
@@ -85,9 +89,11 @@ const Registration = () => {
           email: res.user.email,
         };
 
-        axios.post("http://localhost:5000/users", user).then((res) => {
-          console.log(res.data);
-        });
+        axios
+          .post("https://dish-dynamo-server.vercel.app/users", user)
+          .then((res) => {
+            console.log(res.data);
+          });
       })
       .catch((error) => {
         console.log(error);
