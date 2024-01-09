@@ -6,7 +6,7 @@ import FilteringFood from "./FilteringFood";
 import { Helmet } from "react-helmet";
 import CommonBanner from "../../Components/CommonBanner/CommonBanner";
 import bgImage from "../../assets/Images/commonBanner1.jpg";
-import BigOffer from "../../Components/BigOffer/BigOffer";
+
 import NewsLetter from "../../Components/NewsLetter/NewsLetter";
 
 const AllFoods = () => {
@@ -113,7 +113,7 @@ const AllFoods = () => {
           <option value='27'>27</option>
         </select>
       </div>
-      <BigOffer></BigOffer>
+
       <NewsLetter></NewsLetter>
     </>
   );

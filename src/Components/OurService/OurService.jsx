@@ -4,7 +4,7 @@ import SectionHeading from "../../Shared/SectionHeading";
 import { useEffect } from "react";
 import Aos from "aos";
 import service1 from "../../assets/Images/serviceImage.webp";
-import service2 from "../../assets/Images/feature2.webp";
+
 const OurService = () => {
   const overlayStyle = {
     backgroundImage: `url(${service1})`,
